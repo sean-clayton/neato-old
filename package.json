@@ -1,7 +1,7 @@
 {
-  "name": "neato-react-starter",
+  "name": "neato-react-starterkit",
   "version": "1.0.0",
-  "description": "A React starter project that's pretty neat because of the way it is.",
+  "description": "A React starterkit that's neat because of the way it is.",
   "main": "src/main.js",
   "scripts": {
     "test": "ava",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/seanclayton/neato-react-starter.git"
+    "url": "https://gitlab.com/seanclayton/neato-react-starterkit.git"
   },
   "author": "Sean-Patrick Ortencio Clayton",
   "license": "ISC",
