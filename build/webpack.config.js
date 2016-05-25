@@ -41,8 +41,7 @@ webpackConfig.entry = {
 
 webpackConfig.output = {
   filename: '[name].[hash].js',
-  path: path.join(__dirname, '/dist'),
-  publicPath: path.join(__dirname, '/')
+  path: path.join(__dirname, '/dist')
 }
 
 webpackConfig.plugins = [
@@ -52,7 +51,8 @@ webpackConfig.plugins = [
   new HtmlWebpackPlugin({
     template: path.resolve(__dirname, '../src/') + '/index.html',
     hash: false,
-    favicon: path.resolve(__dirname, '../src/static') + '/favicon.ico',
+    // Uncomment if you want a favicon
+    // favicon: path.resolve(__dirname, '../src/static') + '/favicon.ico',
     filename: 'index.html',
     inject: 'body',
     minify: {
