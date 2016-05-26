@@ -8,7 +8,7 @@ const config = require('../config/')
 const _debug = require('debug')
 const postcssImport = require('postcss-import')
 const precss = require('precss')
-const path = require('path')
+const paths = config.utils_paths
 
 const debug = _debug('app:webpack:config')
 const {__DEV__, __PROD__, __TEST__} = config.globals
@@ -17,39 +17,42 @@ debug('Create configuration.')
 const webpackConfig = {
   name: 'client',
   target: 'web',
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'eval',
   resolve: {
-    root: '/src',
-    extensions: ['', '.js', '.jsx']
+    root: paths.client(),
+    extensions: ['', '.js', '.jsx', '.json']
   },
   module: {},
   modulesDirectories: ['src', 'node_modules'],
+  colors: true,
   stats: {
     colors: true,
     reasons: true
   }
 }
 
-const APP_ENTRY_PATH = './src/main'
+const APP_ENTRY_PATHS = [
+  'babel-polyfill',
+  paths.client('main.jsx')
+]
 
 webpackConfig.entry = {
   app: __DEV__
-    ? [APP_ENTRY_PATH, 'webpack-hot-middleware/client?path=/__webpack_hmr']
-    : [APP_ENTRY_PATH],
+    ? APP_ENTRY_PATHS.concat(`webpack-hot-middleware/client?path=${config.compiler_public_path}__webpack_hmr`)
+    : APP_ENTRY_PATHS,
   vendor: config.vendor_packages
 }
 
 webpackConfig.output = {
   filename: '[name].[hash].js',
-  path: path.join(__dirname, '/dist')
+  path: paths.dist(),
+  publicPath: config.compiler_public_path
 }
 
 webpackConfig.plugins = [
   new webpack.DefinePlugin(config.globals),
-  new webpack.optimize.OccurrenceOrderPlugin(),
-  new webpack.optimize.DedupePlugin(),
   new HtmlWebpackPlugin({
-    template: path.resolve(__dirname, '../src/') + '/index.html',
+    template: paths.client('index.html'),
     hash: false,
     // Uncomment if you want a favicon
     // favicon: path.resolve(__dirname, '../src/static') + '/favicon.ico',
@@ -71,7 +74,15 @@ if (__DEV__) {
 else if (__PROD__) {
   debug('Apply UglifyJS plugin.')
   webpackConfig.plugins.push(
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
+      minimize: true,
       compress: {
         unused: true,
         dead_code: true,
@@ -113,9 +124,27 @@ webpackConfig.module.loaders = [{
   loader: 'babel',
   query: {
     cacheDirectory: true,
+    plugins: ['transform-runtime'],
     presets: __DEV__
-      ? ['es2015', 'react', 'stage-0', 'react-hmre']
-      : ['es2015', 'react', 'stage-0', 'react-optimize']
+      ? ['es2015', 'react', 'stage-0']
+      : ['es2015', 'react', 'stage-0', 'react-optimize'],
+    env: {
+      development: {
+        plugins: [
+          ['react-transform', {
+            'transforms': [{
+              'transform': 'react-transform-hmr',
+              'imports': ['react'],
+              'locals': ['module']
+            }, {
+              'transform': 'react-transform-catch-errors',
+              'imports': ['react', 'redbox-react']
+            }]
+          }],
+          'transform-runtime'
+        ]
+      }
+    }
   }
 },
 {

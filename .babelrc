@@ -16,7 +16,13 @@
             "transform": "react-transform-catch-errors",
             "imports": ["react", "redbox-react"]
           }]
-        }]
+        }],
+        "transform-runtime"
+      ]
+    },
+    "production": {
+      "presets": [
+        "react-optimize"
       ]
     }
   }

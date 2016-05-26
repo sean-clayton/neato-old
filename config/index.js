@@ -15,7 +15,7 @@ const config = {
   compiler_devtool: 'eval',
   compiler_fail_on_warning: false,
   compiler_quiet: false,
-  compiler_public_path: path.join(__dirname, '../'),
+  compiler_public_path: '/',
   compiler_stats: {
     chunks: false,
     chunkModules: false,
@@ -23,6 +23,7 @@ const config = {
   },
   vendor_packages: [
     'react',
+    'react-dom',
     'react-redux',
     'react-router',
     'redux',
