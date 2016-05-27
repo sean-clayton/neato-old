@@ -152,14 +152,12 @@ webpackConfig.module.loaders = [{
 }]
 
 // Styles
-const cssLoader = !config.compiler_css_modules
-  ? 'css?sourceMap'
-  : [
-    'css?modules',
-    'sourceMap',
-    'importLoaders=1',
-    'localIdentName=[name]__[local]___[hash:base64:5]'
-  ].join('&')
+const cssLoader = [
+  'css?modules',
+  'sourceMap',
+  'importLoaders=1',
+  'localIdentName=[name]__[local]___[hash:base64:5]'
+].join('&')
 
 webpackConfig.module.loaders.push({
   test: /\.pcss/,
