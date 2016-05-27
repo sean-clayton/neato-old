@@ -13,7 +13,8 @@ You get the following set up for you out of the box:
 
 - Modular CSS with [PostCSS] &amp; [react-css-modules]
 - A fast unit-testing suite with [AVA], [enzyme], [expect], and coverage reporting with [nyc]
-- App state management with Redux, redux-thunk, and redux-saga
+- App state management with [Redux], [redux-thunk], and [redux-saga]
+- Client-side routing with [react-router]
 - ES2015+ syntax support with [Babel]
 - Performance analysis with [why-did-you-update] and optimization with [babel-react-optimize]
 - Redux debugging with built-in support for the [Redux DevTools Chrome Extension] and [redux-logger]
@@ -25,6 +26,10 @@ You get the following set up for you out of the box:
 [AVA]: https://github.com/avajs/ava
 [enzyme]: http://airbnb.io/enzyme/
 [expect]: https://github.com/mjackson/expect
+[Redux]: http://redux.js.org/
+[redux-thunk]: https://github.com/gaearon/redux-thunk
+[redux-saga]: http://yelouafi.github.io/redux-saga/
+[react-router]: https://github.com/reactjs/react-router
 [nyc]: https://github.com/bcoe/nyc
 [Babel]: https://babeljs.io/
 [why-did-you-update]: https://github.com/garbles/why-did-you-update
