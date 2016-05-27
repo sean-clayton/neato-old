@@ -1,4 +1,16 @@
-<img style="max-width:768px;" src="logo.png" />
+<div align="center">
+  <img style="max-width:768px;" src="logo.png" />
+  <!-- Dependency Status -->
+  [![Dependency Status](https://david-dm.org/sean-clayton/neato-react-starterkit.svg)](https://david-dm.org/sean-clayton/neato-react-starterkit)
+  <!-- devDependency Status -->
+  [![devDependency Status](https://david-dm.org/sean-clayton/neato-react-starterkit/dev-status.svg)](https://david-dm.org/sean-clayton/neato-react-starterkit#info=devDependencies)
+  <!-- Build Status -->
+  [![build status](https://gitlab.com/seanclayton/neato-react-starterkit/badges/master/build.svg)](https://gitlab.com/seanclayton/neato-react-starterkit/commits/master)
+  <!-- Donations -->
+  <a href="https://cash.me/$seanc">
+    <img src="https://img.shields.io/badge/square-donate-green.svg" alt="Donate with Square Cash" />
+  </a>
+</div>
 
 # Neato
 A React starter kit that's pretty neat.
