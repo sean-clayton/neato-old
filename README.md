@@ -1,11 +1,11 @@
 <div align="center">
   <img style="max-width:768px;" src="logo.png" />
   <!-- Dependency Status -->
-  [![Dependency Status](https://david-dm.org/sean-clayton/neato-react-starterkit.svg)](https://david-dm.org/sean-clayton/neato-react-starterkit)
+  <a href="https://david-dm.org/sean-clayton/neato-react-starterkit" title="Dependency status"><img src="https://david-dm.org/sean-clayton/neato-react-starterkit.svg"/></a>
   <!-- devDependency Status -->
-  [![devDependency Status](https://david-dm.org/sean-clayton/neato-react-starterkit/dev-status.svg)](https://david-dm.org/sean-clayton/neato-react-starterkit#info=devDependencies)
+  <a href="https://david-dm.org/sean-clayton/neato-react-starterkit#info=devDependencies" title="devDependency status"><img src="https://david-dm.org/sean-clayton/neato-react-starterkit/dev-status.svg"/></a>
   <!-- Build Status -->
-  [![build status](https://gitlab.com/seanclayton/neato-react-starterkit/badges/master/build.svg)](https://gitlab.com/seanclayton/neato-react-starterkit/commits/master)
+  <a href="https://gitlab.com/seanclayton/neato-react-starterkit/commits/master"><img alt="build status" src="https://gitlab.com/seanclayton/neato-react-starterkit/badges/master/build.svg" /></a>
   <!-- Donations -->
   <a href="https://cash.me/$seanc">
     <img src="https://img.shields.io/badge/square-donate-green.svg" alt="Donate with Square Cash" />
