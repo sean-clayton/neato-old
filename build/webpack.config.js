@@ -17,7 +17,7 @@ debug('Create configuration.')
 const webpackConfig = {
   name: 'client',
   target: 'web',
-  devtool: 'eval',
+  devtool: 'cheap-source-map',
   resolve: {
     root: paths.client(),
     extensions: ['', '.js', '.jsx', '.json']
@@ -45,6 +45,7 @@ webpackConfig.entry = {
 
 webpackConfig.output = {
   filename: '[name].[hash].js',
+  sourceMapFilename: '[name].[hash].js.map',
   path: paths.dist(),
   publicPath: config.compiler_public_path
 }
@@ -74,26 +75,14 @@ if (__DEV__) {
 else if (__PROD__) {
   debug('Apply UglifyJS plugin.')
   webpackConfig.plugins.push(
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-      }
-    }),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
-      minimize: true,
-      compress: {
-        unused: true,
-        dead_code: true,
-        drop_console: true,
-        screw_ie8: true,
-        drop_debugger: true,
-        hoist_funs: true,
-        evaluate: true,
-        comparisons: true,
-        properties: true,
-        warnings: false
+      minimize: true
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
       }
     })
   )

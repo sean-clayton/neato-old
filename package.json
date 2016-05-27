@@ -7,7 +7,15 @@
     "test": "ava",
     "clean": "rimraf dist",
     "dev": "NODE_ENV=development node scripts/server",
-    "compile": "NODE_ENV=production npm run clean && node scripts/compile"
+    "compile": "better-npm-run compile"
+  },
+  "betterScripts": {
+    "compile": {
+      "command": "babel-node scripts/compile.js",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
   },
   "repository": {
     "type": "git",
@@ -16,6 +24,7 @@
   "author": "Sean-Patrick Ortencio Clayton",
   "license": "ISC",
   "dependencies": {
+    "babel-cli": "^6.9.0",
     "babel-core": "^6.9.0",
     "babel-loader": "^6.2.4",
     "babel-plugin-transform-runtime": "^6.9.0",
@@ -25,6 +34,7 @@
     "babel-preset-react-optimize": "^1.0.1",
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.9.0",
+    "better-npm-run": "0.0.8",
     "css-loader": "^0.23.1",
     "cssnano": "^3.6.2",
     "debug": "^2.2.0",

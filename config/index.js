@@ -12,7 +12,7 @@ const config = {
   dir_server: 'server',
   server_host: 'localhost',
   server_port: process.env.PORT || 3000,
-  compiler_devtool: 'eval',
+  compiler_devtool: 'source-map',
   compiler_fail_on_warning: false,
   compiler_quiet: false,
   compiler_public_path: '/',
