@@ -15,24 +15,25 @@ You get the following set up for you out of the box:
 - A fast unit-testing suite with [AVA], [enzyme], [expect], and coverage reporting with [nyc]
 - App state management with Redux, redux-thunk, and redux-saga
 - ES2015+ syntax support with [Babel]
-- Performance analysis with [why-did-you-update] and optimization with [babel-preset-react-optimize]
+- Performance analysis with [why-did-you-update] and optimization with [babel-react-optimize]
 - Redux debugging with built-in support for the [Redux DevTools Chrome Extension] and [redux-logger]
 - Quick error analysis with [redbox-react] and [react-transform-catch-errors]
 - Code-quality checking with [eslint]
 
-[PostCSS]: #
-[react-css-modules]: #
-[AVA]: #
-[enzyme]: #
-[expect]: #
-[nyc]: #
-[Babel]: #
-[why-did-you-update]: #
-[babel-preset-react-optimize]: #
-[Redux DevTools Chrome Extension]: #
-[redux-logger]: #
-[react-transform-catch-errors]: #
-[eslint]: #
+[PostCSS]: http://postcss.org/
+[react-css-modules]: https://github.com/gajus/react-css-modules
+[AVA]: https://github.com/avajs/ava
+[enzyme]: http://airbnb.io/enzyme/
+[expect]: https://github.com/mjackson/expect
+[nyc]: https://github.com/bcoe/nyc
+[Babel]: https://babeljs.io/
+[why-did-you-update]: https://github.com/garbles/why-did-you-update
+[babel-react-optimize]: https://github.com/thejameskyle/babel-react-optimize
+[Redux DevTools Chrome Extension]: https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd
+[redux-logger]: https://github.com/theaqua/redux-logger
+[redbox-react]: https://github.com/KeywordBrain/redbox-react
+[react-transform-catch-errors]: https://github.com/gaearon/react-transform-catch-errors
+[eslint]: http://eslint.org/
 
 ### Installation
 
