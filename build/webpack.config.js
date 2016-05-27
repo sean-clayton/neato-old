@@ -163,7 +163,7 @@ const cssLoader = !config.compiler_css_modules
   ].join('&')
 
 webpackConfig.module.loaders.push({
-  test: /\.postcss$/,
+  test: /\.pcss/,
   include: /src/,
   loaders: [
     'style',
@@ -173,7 +173,7 @@ webpackConfig.module.loaders.push({
 })
 
 webpackConfig.module.loaders.push({
-  test: /\.postcss$/,
+  test: /\.pcss/,
   exclude: /src/,
   loaders: [
     'style',
@@ -183,7 +183,7 @@ webpackConfig.module.loaders.push({
 })
 
 webpackConfig.module.loaders.push({
-  test: /\.*.global.postcss$/,
+  test: /\.*.global.pcss/,
   loaders: [
     'style',
     'css?sourceMap',
