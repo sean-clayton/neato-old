@@ -45,8 +45,7 @@ webpackConfig.entry = {
 
 webpackConfig.output = {
   filename: '[name].[hash].js',
-  sourceMapFilename: '[name].[hash].js.map',
-  path: paths.dist(),
+  path: paths.base(config.dir_dist),
   publicPath: config.compiler_public_path
 }
 
@@ -78,7 +77,18 @@ else if (__PROD__) {
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
-      minimize: true
+      compress: {
+        unused: true,
+        dead_code: true,
+        drop_console: true,
+        screw_ie8: true,
+        drop_debugger: true,
+        hoist_funs: true,
+        evaluate: true,
+        comparisons: true,
+        properties: true,
+        warnings: false
+      }
     }),
     new webpack.DefinePlugin({
       'process.env': {
@@ -172,7 +182,7 @@ webpackConfig.module.loaders.push({
 })
 
 webpackConfig.module.loaders.push({
-  test: /\.*.global.pcss/,
+  test: /\.*.global.css/,
   loaders: [
     'style',
     'css?sourceMap',
@@ -187,11 +197,12 @@ webpackConfig.postcss = [
   }),
   precss(),
   cssnano({
-    sourcemap: true,
+    sourcemap: !__PROD__,
+    compress: __PROD__,
     autoprefixer: {
       add: true,
       remove: true,
-      browsers: ['ie >= 10', 'last 2 versions']
+      browsers: ['last 2 versions']
     },
     safe: true,
     discardComments: {
@@ -220,7 +231,7 @@ if (!__DEV__) {
   })
 
   webpackConfig.plugins.push(
-    new ExtractTextPlugin('[name].css', {
+    new ExtractTextPlugin('[name].[contenthash].css', {
       allChunks: true
     })
   )

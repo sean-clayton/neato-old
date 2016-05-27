@@ -16,6 +16,7 @@ const config = {
   compiler_fail_on_warning: false,
   compiler_quiet: false,
   compiler_public_path: '/',
+  compiler_css_modules: true,
   compiler_stats: {
     chunks: false,
     chunkModules: false,
