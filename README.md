@@ -113,4 +113,6 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-Made with :heart: from :fleur_de_lis: Louisville, KY
+<div align="center">
+  <sup>Made with :heart: from <img src="https://cdn.rawgit.com/sean-clayton/13721b3d1dadcefec06279aee37688f6/raw/d739621b15b24544605bb2e5c5d3eb364a4c9842/fleur-de-lis.svg" /> Louisville, KY</sup>
+</div>
