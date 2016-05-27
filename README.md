@@ -1,5 +1,6 @@
 <div align="center">
   <img style="max-width:768px;" src="logo.png" />
+  <br />
   <!-- Dependency Status -->
   <a href="https://david-dm.org/sean-clayton/neato-react-starterkit" title="Dependency status"><img src="https://david-dm.org/sean-clayton/neato-react-starterkit.svg"/></a>
   <!-- devDependency Status -->
