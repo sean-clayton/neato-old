@@ -4,12 +4,19 @@
   "description": "A React starterkit that's neat because of the way it is.",
   "main": "src/main.js",
   "scripts": {
+    "start": "better-npm-run start",
     "test": "ava",
     "clean": "rimraf dist",
     "dev": "NODE_ENV=development node scripts/server",
     "compile": "better-npm-run compile"
   },
   "betterScripts": {
+    "start": {
+      "command": "node scripts/server",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
     "compile": {
       "command": "babel-node scripts/compile.js",
       "env": {
