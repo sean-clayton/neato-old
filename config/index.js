@@ -28,7 +28,9 @@ const config = {
     'react-redux',
     'react-router',
     'redux',
-    'react-css-modules'
+    'react-css-modules',
+    'lodash',
+    'node-uuid'
   ]
 }
 
