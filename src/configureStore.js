@@ -1,14 +1,29 @@
-import { createStore } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import rootReducer from 'reducers/rootReducer'
 import { throttle } from 'lodash'
+import createSagaMiddleware from 'redux-saga'
+import thunk from 'redux-thunk'
 import { getLocalStorage, setLocalStorage } from 'utils/localStorage'
+
+const sagaMiddleware = createSagaMiddleware()
+let middlewares = [thunk, sagaMiddleware]
+if (__DEV__) {
+  const createLogger = require('redux-logger')
+  const logger = createLogger({
+    level: 'debug'
+  })
+  middlewares.push(logger)
+}
 
 const configureStore = () => {
   const persistedState = getLocalStorage()
   const store = createStore(
     rootReducer,
     persistedState,
-    window.devToolsExtension && window.devToolsExtension()
+    compose(
+      applyMiddleware(...middlewares),
+      window.devToolsExtension ? window.devToolsExtension() : f => f
+    )
   )
 
   store.subscribe(throttle(() => {

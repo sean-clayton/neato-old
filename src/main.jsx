@@ -6,12 +6,4 @@ import 'styles/styles.global.css'
 
 const store = configureStore()
 
-class App extends React.Component {
-  render() {
-    return (
-      <Root store={store} />
-    )
-  }
-}
-
-ReactDOM.render(<App />, document.getElementById('app'))
+ReactDOM.render(<Root store={store} />, document.getElementById('app'))
