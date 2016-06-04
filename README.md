@@ -116,6 +116,13 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
+### Acknowledgements
+
+- Structure/some techniques heavily influenced by [davezuko]'s [React Redux Starter Kit] initially
+
+[React Redux Starter Kit]: https://github.com/davezuko/react-redux-starter-kit
+[davezuko]: https://github.com/davezuko
+
 - - -
 
 <div align="center">
