@@ -29,6 +29,8 @@ const config = {
     'react-router',
     'redux',
     'react-css-modules',
+    'redux-thunk',
+    'redux-saga',
     'lodash'
   ]
 }
