@@ -29,8 +29,7 @@ const config = {
     'react-router',
     'redux',
     'react-css-modules',
-    'lodash',
-    'node-uuid'
+    'lodash'
   ]
 }
 
