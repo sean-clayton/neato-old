@@ -33,6 +33,7 @@ You get the following set up for you out of the box:
 - Redux debugging with built-in support for the [Redux DevTools Chrome Extension] and [redux-logger]
 - Quick error analysis with [redbox-react] and [react-transform-catch-errors]
 - Code-quality checking with [eslint]
+- Offline support with [Service Workers] &amp; [Browser Storage]
 
 [PostCSS]: http://postcss.org/
 [react-css-modules]: https://github.com/gajus/react-css-modules
@@ -52,6 +53,8 @@ You get the following set up for you out of the box:
 [redbox-react]: https://github.com/KeywordBrain/redbox-react
 [react-transform-catch-errors]: https://github.com/gaearon/react-transform-catch-errors
 [eslint]: http://eslint.org/
+[Service Workers]: https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
+[Browser Storage]: https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 
 ### Installation
 
