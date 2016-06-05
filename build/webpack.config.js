@@ -63,9 +63,7 @@ webpackConfig.plugins = [
       collapseWhitespace: true
     }
   }),
-  new OfflinePlugin({
-    publicPath: config.compiler_public_path
-  })
+  new OfflinePlugin()
 ]
 
 if (__DEV__) {
