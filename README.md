@@ -33,6 +33,7 @@ You get the following set up for you out of the box:
 - Redux debugging with built-in support for the [Redux DevTools Chrome Extension] and [redux-logger]
 - Quick error analysis with [redbox-react] and [react-transform-catch-errors]
 - Code-quality checking with [eslint]
+- JSX accessibility quality checking
 - Offline support with [Service Workers] &amp; [Browser Storage]
 
 [PostCSS]: http://postcss.org/
