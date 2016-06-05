@@ -18,7 +18,7 @@ debug('Create configuration.')
 const webpackConfig = {
   name: 'client',
   target: 'web',
-  devtool: 'cheap-source-map',
+  devtool: 'source-map',
   resolve: {
     root: paths.client(),
     extensions: ['', '.js', '.jsx', '.json']
@@ -29,7 +29,8 @@ const webpackConfig = {
   stats: {
     colors: true,
     reasons: true
-  }
+  },
+  jsonpFunction: '_jp_'
 }
 
 const APP_ENTRY_PATHS = [
