@@ -4,6 +4,7 @@ const webpack = require('webpack')
 const cssnano = require('cssnano')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const OfflinePlugin = require('offline-plugin')
 const config = require('../config/')
 const _debug = require('debug')
 const postcssImport = require('postcss-import')
@@ -61,6 +62,9 @@ webpackConfig.plugins = [
     minify: {
       collapseWhitespace: true
     }
+  }),
+  new OfflinePlugin({
+    publicPath: config.compiler_public_path
   })
 ]
 
