@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from 'react-dom'
 import { install } from 'offline-plugin/runtime'
 import { whyDidYouUpdate } from 'why-did-you-update'
 import configureStore from './configureStore'
@@ -16,4 +16,4 @@ if (!__PROD__) {
 
 const store = configureStore()
 
-ReactDOM.render(<Root store={store} />, document.getElementById('app'))
+render(<Root store={store} />, document.getElementById('app'))

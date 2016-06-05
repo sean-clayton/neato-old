@@ -30,8 +30,7 @@ const config = {
     'redux',
     'react-css-modules',
     'redux-thunk',
-    'redux-saga',
-    'lodash'
+    'redux-saga'
   ]
 }
 
