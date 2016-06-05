@@ -65,7 +65,7 @@ Having to track issues and pull requests from two different places seems pretty 
 
 [GitLab]: https://gitlab.com
 [issues]: https://gitlab.com/seanclayton/neato-react-starterkit/issues
-[pull-requests]: https://gitlab.com/seanclayton/neato-react-starterkit/merge_requests/new
+[pull-requests]: https://gitlab.com/seanclayton/neato-react-starterkit/merge_requests
 [the GitLab project page]: https://gitlab.com/seanclayton/neato-react-starterkit
 
 ***
