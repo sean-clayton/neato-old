@@ -44,8 +44,10 @@ webpackConfig.entry = {
   vendor: config.vendor_packages
 }
 
+const filename = __PROD__ ? '[name].[chunkhash].js' : '[name].[hash].js'
+
 webpackConfig.output = {
-  filename: '[name].[hash].js',
+  filename,
   path: paths.base(config.dir_dist),
   publicPath: config.compiler_public_path
 }
