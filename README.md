@@ -56,6 +56,20 @@ You get the following set up for you out of the box:
 [Service Workers]: https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
 [Browser Storage]: https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 
+***
+
+### Why No Issues or Pull Requests on GitHub?
+I prefer to do most of my OSS stuff on [GitLab]. In fact, the repo there mirrors to GitHub, so it's the source of truth. I have it on GitHub solely because it seems like the target audience for this project most likely has a GitHub account over a GitLab account.
+
+Having to track issues and pull requests from two different places seems pretty hard to manage, so I ask you submit [issues] or [pull-requests] on [the GitLab project page]
+
+[GitLab]: https://gitlab.com
+[issues]: https://gitlab.com/seanclayton/neato-react-starterkit/issues
+[pull-requests]: https://gitlab.com/seanclayton/neato-react-starterkit/merge_requests/new
+[the GitLab project page]: https://gitlab.com/seanclayton/neato-react-starterkit
+
+***
+
 ### Installation
 
 #### Prerequisites
