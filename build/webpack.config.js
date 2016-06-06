@@ -159,7 +159,6 @@ webpackConfig.module.loaders = [{
 // Styles
 const cssLoader = [
   'css?modules',
-  'sourceMap',
   'importLoaders=1',
   'localIdentName=[name]__[local]___[hash:base64:5]'
 ].join('&')
@@ -168,7 +167,7 @@ webpackConfig.module.loaders.push({
   test: /\.pcss/,
   include: /src/,
   loaders: [
-    'style',
+    'style?sourceMap',
     cssLoader,
     'postcss'
   ]
@@ -178,8 +177,8 @@ webpackConfig.module.loaders.push({
   test: /\.pcss/,
   exclude: /src/,
   loaders: [
-    'style',
-    'css?sourceMap',
+    'style?sourceMap',
+    'css',
     'postcss'
   ]
 })
@@ -187,8 +186,8 @@ webpackConfig.module.loaders.push({
 webpackConfig.module.loaders.push({
   test: /\.*.global.css/,
   loaders: [
-    'style',
-    'css?sourceMap',
+    'style?sourceMap',
+    'css',
     'postcss'
   ]
 })
