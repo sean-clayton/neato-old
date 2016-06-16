@@ -8,7 +8,8 @@
     "test": "ava",
     "clean": "rimraf dist",
     "dev": "NODE_ENV=development node scripts/server",
-    "compile": "better-npm-run compile"
+    "compile": "better-npm-run compile",
+    "storybook": "start-storybook -p 9001"
   },
   "betterScripts": {
     "start": {
@@ -69,6 +70,7 @@
     "webpack": "^1.13.1"
   },
   "devDependencies": {
+    "@kadira/storybook": "^1.32.1",
     "ava": "^0.15.0",
     "babel-eslint": "^6.0.4",
     "babel-plugin-webpack-loaders": "^0.5.0",
