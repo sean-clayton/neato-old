@@ -1,3 +1,9 @@
+# WARNING!
+
+I'm currently changing the entire structure/purpose of this project. It's being changed from boilerplate code you clone to a module you install via npm. [More information can be found here].
+
+[More information can be found here]: https://gitlab.com/seanclayton/neato/issues/9
+
 <div align="center">
   <img style="max-width:768px;" src="logo.png" />
   <br />
@@ -56,6 +62,12 @@ You get the following set up for you out of the box:
 [eslint]: http://eslint.org/
 [Service Workers]: https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
 [Browser Storage]: https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+
+### Planned Features
+
+You can see [all issues with the `planned-feature` label here].
+
+[all issues with the `planned-feature` label here]: https://gitlab.com/seanclayton/neato/issues?label_name%5B%5D=planned-feature
 
 ***
 
