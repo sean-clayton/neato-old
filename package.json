@@ -1,7 +1,7 @@
 {
-  "name": "neato-react-starterkit",
+  "name": "neato",
   "version": "1.0.0",
-  "description": "A React starterkit that's neat because of the way it is.",
+  "description": "An app performance-enhancing drug that's pretty neat because of the way it is.",
   "main": "src/main.js",
   "scripts": {
     "start": "better-npm-run start",
