@@ -5,6 +5,8 @@
 node_modules
 
 dist
+lib
+typings
 
 .vscode
 .idea
