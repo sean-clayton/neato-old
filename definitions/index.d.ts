@@ -44,7 +44,8 @@ interface IJavascriptConfig {
 }
 
 interface Error {
-  stack?: string
+  stack?: string,
+  details?: string
 }
 
 type NeatoBuildTarget = 'development' | 'production' | 'test'
