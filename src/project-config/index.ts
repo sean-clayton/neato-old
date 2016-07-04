@@ -1,8 +1,7 @@
 /// <reference path="../../definitions/index.d.ts" />
 
 import * as path from 'path'
-import fileExists from '../utils/fileExists'
-import _extends from '../utils/extends'
+import fileExists from '../utils/file-exists'
 
 const projectConfig = (neatoOptions) => {
   const { projectPath } = neatoOptions
@@ -12,6 +11,6 @@ const projectConfig = (neatoOptions) => {
     return neatoOptions
   }
 
-  return {_extends({}, neatoOptions, require(configPath))}
+  return Object.assign({}, neatoOptions, require(configPath))
 }
 
