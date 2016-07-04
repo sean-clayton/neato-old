@@ -20,48 +20,11 @@ I'm currently changing the entire structure/purpose of this project. It's being 
 </div>
 
 # Neato
-A React starter kit that's pretty neat.
+An app performance-enhancing drug that's pretty neat because of the way it is.
 
 ### About Neato
 
-Neato is a mildly-opinionated, bare-bones, yet feature-filled, React/Redux starter kit to help you write your app the way you want to while minimizing the React project setup time.
-
-### Features
-
-You get the following set up for you out of the box:
-
-- Modular CSS with [PostCSS] &amp; [react-css-modules]
-- A fast unit-testing suite with [AVA], [enzyme], [expect], and coverage reporting with [nyc]
-- App state management with [Redux], [redux-thunk], and [redux-saga]
-- Client-side routing with [react-router]
-- ES2015+ syntax support with [Babel]
-- Performance analysis with [why-did-you-update] and optimization with [babel-react-optimize]
-- Redux debugging with built-in support for the [Redux DevTools Chrome Extension] and [redux-logger]
-- Quick error analysis with [redbox-react] and [react-transform-catch-errors]
-- Code-quality checking with [eslint]
-- JSX accessibility quality checking
-- Offline support with [Service Workers] &amp; [Browser Storage]
-
-[PostCSS]: http://postcss.org/
-[react-css-modules]: https://github.com/gajus/react-css-modules
-[AVA]: https://github.com/avajs/ava
-[enzyme]: http://airbnb.io/enzyme/
-[expect]: https://github.com/mjackson/expect
-[Redux]: http://redux.js.org/
-[redux-thunk]: https://github.com/gaearon/redux-thunk
-[redux-saga]: http://yelouafi.github.io/redux-saga/
-[react-router]: https://github.com/reactjs/react-router
-[nyc]: https://github.com/bcoe/nyc
-[Babel]: https://babeljs.io/
-[why-did-you-update]: https://github.com/garbles/why-did-you-update
-[babel-react-optimize]: https://github.com/thejameskyle/babel-react-optimize
-[Redux DevTools Chrome Extension]: https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd
-[redux-logger]: https://github.com/theaqua/redux-logger
-[redbox-react]: https://github.com/KeywordBrain/redbox-react
-[react-transform-catch-errors]: https://github.com/gaearon/react-transform-catch-errors
-[eslint]: http://eslint.org/
-[Service Workers]: https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
-[Browser Storage]: https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+Neato is a module you install at your project's start. It adds a bunch of the wiring up you usually do when making a modern React-based web app, including your build system, development server, client-side routing, etc. It's super configurable, too!
 
 ### Planned Features
 
@@ -77,9 +40,9 @@ I prefer to do most of my OSS stuff on [GitLab]. In fact, the repo there mirrors
 Having to track issues and pull requests from two different places seems pretty hard to manage, so I ask you submit [issues] or [pull-requests] on [the GitLab project page]
 
 [GitLab]: https://gitlab.com
-[issues]: https://gitlab.com/seanclayton/neato-react-starterkit/issues
-[pull-requests]: https://gitlab.com/seanclayton/neato-react-starterkit/merge_requests
-[the GitLab project page]: https://gitlab.com/seanclayton/neato-react-starterkit
+[issues]: https://gitlab.com/seanclayton/neato/issues
+[pull-requests]: https://gitlab.com/seanclayton/neato/merge_requests
+[the GitLab project page]: https://gitlab.com/seanclayton/neato
 
 ***
 
@@ -87,45 +50,17 @@ Having to track issues and pull requests from two different places seems pretty 
 
 #### Prerequisites
 
-- Node >= 5.0
+- Node >= 6.0
 
 ```sh
-$ git clone https://gitlab.com/seanclayton/neato-react-starterkit.git
-$ cd neato-react-starterkit
-$ npm install
-```
-
-### Usage
-
-#### Commands
-
-_Note:_ A full list of commands can be found in the "scripts" section of [package.json](package.json)
-
-```sh
-# Start Dev Suite
-$ npm start
-
-# Start Dev Mode
-$ npm run dev
-
-# Run Tests
-$ npm test
-
-# Run Test Coverage
-$ npm run cover
-
-# Lint
-$ npm run lint
-
-# Compile a Production-Ready Bundle
-$ npm run compile
+$ npm i -S neato # Shorthand for npm install --save neato
 ```
 
 ### Known Bugs
 
-[All issues are reported here.](https://gitlab.com/seanclayton/neato-react-starterkit/issues)
+[All issues are reported here.](https://gitlab.com/seanclayton/neato/issues)
 
-### [LICENSE](LICENSE)
+### LICENSE
 
 COPYRIGHT &copy; 2016 Sean-Patrick Ortencio Clayton
 
