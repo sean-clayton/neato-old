@@ -4,7 +4,7 @@ import * as path from 'path'
 import * as cli from './cli'
 import * as projectConfig from './project-config'
 import run from './runner'
-import * as json from './utils/json'
+import json from './utils/json'
 import fileExists from './utils/file-exists'
 import pipeline from './utils/pipeline'
 
@@ -49,7 +49,7 @@ MissingPackageJSONError.prototype = Object.create(Error.prototype)
 MissingPackageJSONError.prototype.constructor = MissingPackageJSONError
 
 const neato = (options: INeatoUserConfig = {}) => {
-  const neatoOptions: INeatoUserConfig = pipeline(
+  const neatoOptions: INeatoConfig = pipeline(
     sanityCheck,
     projectConfig
   )(Object.assign({}, DEFAULT_OPTIONS, options))
