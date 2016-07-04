@@ -9,9 +9,9 @@ interface INeatoUserConfig {
   lint?: boolean,
   pages?: string[],
   disabledLoaders?: string[],
-  javascript?: any | undefined,
-  webpack?: any | undefined,
-  ava?: any | undefined
+  javascript?: any | undefined | null,
+  webpack?: any | undefined | null,
+  ava?: any | undefined | null
 }
 
 interface INeatoConfig extends INeatoUserConfig {
