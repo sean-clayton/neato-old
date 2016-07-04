@@ -17,22 +17,6 @@ const setupAction = (action) => (cliOptions = {}) => {
   neato(options).run().then(() => process.exit(0), () => process.exit(1))
 }
 
-export default (argv: string[] = []) => {
-  try {
-    program.parse(argv)
-  } catch (e) {
-    if (e instanceof NeatoPathError || e instanceof MissingPackageJSONError) {
-      console.log(e.message)
-      return
-    }
-
-    console.error('Error starting Neato')
-    console.error(e.stack || e)
-  }
-
-  if (!argv.slice(2).length) program.outputHelp()
-}
-
 program.command('install')
   .description('Install or update Neato in the current project')
 
@@ -51,3 +35,19 @@ program.command('build')
 program.command('develop')
   .description('Run development environment')
   .option('-p, --port <n>', 'Port the server will listen (default: 3000)', parseInt)
+
+export default (argv: string[] = []) => {
+  try {
+    program.parse(argv)
+  } catch (e) {
+    if (e instanceof NeatoPathError || e instanceof MissingPackageJSONError) {
+      console.log(e.message)
+      return
+    }
+
+    console.error('Error starting Neato')
+    console.error(e.stack || e)
+  }
+
+  if (!argv.slice(2).length) program.outputHelp()
+}
