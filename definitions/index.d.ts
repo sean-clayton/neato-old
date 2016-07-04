@@ -1,17 +1,8 @@
-interface INeatoUserConfig {
-  port?: number,
-  neato?: string,
-  hotReloading?: boolean,
-  optimize?: boolean,
-  defineNodeEnv?: boolean,
-  clean?: boolean,
-  coverage?: boolean,
-  lint?: boolean,
-  pages?: string[],
-  disabledLoaders?: string[],
-  javascript?: any | undefined | null,
-  webpack?: any | undefined | null,
-  ava?: any | undefined | null
+interface INeato extends INeatoConfig {
+  projectPath: string,
+  buildTarget: NeatoBuildTarget
+  run(): any,
+  cli: any
 }
 
 interface INeatoConfig extends INeatoUserConfig {
@@ -25,10 +16,20 @@ interface INeatoConfig extends INeatoUserConfig {
   lint: boolean
 }
 
-
-interface INeato extends INeatoConfig {
-  run(): any,
-  cli: any
+interface INeatoUserConfig {
+  port?: number,
+  neato?: string,
+  hotReloading?: boolean,
+  optimize?: boolean,
+  defineNodeEnv?: boolean,
+  clean?: boolean,
+  coverage?: boolean,
+  lint?: boolean,
+  pages?: string[],
+  disabledLoaders?: string[],
+  javascript?: IJavascriptConfig,
+  webpack?: any | undefined | null,
+  ava?: any | undefined | null
 }
 
 interface INeatoError {
@@ -37,12 +38,17 @@ interface INeatoError {
   stack?: string
 }
 
+interface IJavascriptConfig {
+  buildDependencies?: string[]
+}
+
 interface Error {
   stack?: string
 }
 
+type NeatoBuildTarget = 'build' | 'develop' | 'install' | 'lint' | 'test'
+
 // TODO: IAvaConfig
-// TODO: IJavascriptConfig
 // TODO: IWebpackConfig
 // TODO: IPage
 // TODO: ILoader
