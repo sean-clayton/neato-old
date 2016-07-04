@@ -1,6 +1,4 @@
 interface INeato extends INeatoConfig {
-  projectPath: string,
-  buildTarget: NeatoBuildTarget
   run(): any,
   cli: any
 }
@@ -17,6 +15,9 @@ interface INeatoConfig extends INeatoUserConfig {
 }
 
 interface INeatoUserConfig {
+  projectPath?: string,
+  buildTarget?: NeatoBuildTarget,
+  action?: NeatoAction,
   port?: number,
   neato?: string,
   hotReloading?: boolean,
@@ -46,7 +47,8 @@ interface Error {
   stack?: string
 }
 
-type NeatoBuildTarget = 'build' | 'develop' | 'install' | 'lint' | 'test'
+type NeatoBuildTarget = 'development' | 'production' | 'test'
+type NeatoAction = 'build' | 'develop' | 'install' | 'lint' | 'test'
 
 // TODO: IAvaConfig
 // TODO: IWebpackConfig
