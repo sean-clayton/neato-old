@@ -1,10 +1,21 @@
 {
   "compilerOptions": {
     "outDir": "lib",
-    "target": "es5"
+    "target": "es5",
+    "jsx": "react",
+    "module": "es2015",
+    "experimentalDecorators": true,
+    "strictNullChecks": true,
+    "types": ["node", "commander"]
   },
   "exclude": [
     "node_modules",
     "lib"
-  ]
+  ],
+  "formatCodeOptions": {
+    "indentSize": 2,
+    "tabSize": 2
+  },
+  "compileOnSave": false,
+  "buildOnSave": false
 }
