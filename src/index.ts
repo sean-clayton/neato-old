@@ -3,11 +3,10 @@
 import * as path from 'path'
 import * as cli from './cli'
 import * as projectConfig from './project-config'
-import * as run from './runner'
+import run from './runner'
 import * as json from './utils/json'
-import * as fileExists from './utils/file-exists'
+import fileExists from './utils/file-exists'
 import pipeline from './utils/pipeline'
-import _extends from './utils/extends'
 
 // Default Options
 const DEFAULT_OPTIONS: INeatoConfig = {
@@ -49,13 +48,13 @@ export function MissingPackageJSONError() {
 MissingPackageJSONError.prototype = Object.create(Error.prototype)
 MissingPackageJSONError.prototype.constructor = MissingPackageJSONError
 
-const neato = (options: INeatoUserConfig = {}) => {
-  const neatoOptions = pipeline(
+const neato = (options: INeatoUserConfig = {}): INeato => {
+  const neatoOptions: INeatoConfig = pipeline(
     sanityCheck,
     projectConfig
-  )(_extends({}, DEFAULT_OPTIONS, options))
-  return _extends({}, neatoOptions, {
-    run: () => run(),
+  )(Object.assign({}, DEFAULT_OPTIONS, options))
+  return Object.assign({}, neatoOptions, {
+    run: () => run(neatoOptions),
     cli: cli
   })
 }
