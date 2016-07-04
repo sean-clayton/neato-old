@@ -1,19 +1,3 @@
-interface INeatoConfig {
-  port: number,
-  neato: string,
-  hotReloading: boolean,
-  optimize: boolean,
-  defineNodeEnv: boolean,
-  clean: boolean,
-  coverage: boolean,
-  lint: boolean,
-  pages?: string[],
-  disabledLoaders?: string[],
-  javascript?: any,
-  webpack?: any,
-  ava?: any
-}
-
 interface INeatoUserConfig {
   port?: number,
   neato?: string,
@@ -30,8 +14,19 @@ interface INeatoUserConfig {
   ava?: any | undefined
 }
 
-interface INeato {
-  [propName: string]: any
+interface INeatoConfig extends INeatoUserConfig {
+  port: number,
+  neato: string,
+  hotReloading: boolean,
+  optimize: boolean,
+  defineNodeEnv: boolean,
+  clean: boolean,
+  coverage: boolean,
+  lint: boolean
+}
+
+
+interface INeato extends INeatoConfig {
   run(): any,
   cli: any
 }
