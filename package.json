@@ -2,29 +2,17 @@
   "name": "neato",
   "version": "1.0.0",
   "description": "An app performance-enhancing drug that's pretty neat because of the way it is.",
-  "main": "bin/neato",
-  "scripts": {
-    "start": "bnr start",
-    "test": "ava",
-    "clean": "rimraf dist",
-    "dev": "NODE_ENV=development node scripts/server",
-    "compile": "bnr compile",
-    "storybook": "start-storybook -p 9001"
+  "preferGlobal": false,
+  "bin": {
+    "neato": "./bin/neato.js"
   },
-  "betterScripts": {
-    "start": {
-      "command": "node scripts/server",
-      "env": {
-        "NODE_ENV": "development"
-      }
-    },
-    "compile": {
-      "command": "babel-node scripts/compile",
-      "env": {
-        "NODE_ENV": "production"
-      }
-    }
-  },
+  "main": "index.ts",
+  "files": [
+    "lib",
+    "src",
+    "tsconfig.json",
+    "tslint.json"
+  ],
   "repository": {
     "type": "git",
     "url": "https://gitlab.com/seanclayton/neato.git"
@@ -32,83 +20,11 @@
   "author": "Sean-Patrick Ortencio Clayton",
   "license": "ISC",
   "dependencies": {
-    "babel-cli": "^6.9.0",
-    "babel-core": "^6.9.0",
-    "babel-loader": "^6.2.4",
-    "babel-plugin-transform-runtime": "^6.9.0",
-    "babel-polyfill": "^6.9.0",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.5.0",
-    "babel-preset-react-optimize": "^1.0.1",
-    "babel-preset-stage-0": "^6.5.0",
-    "babel-register": "^6.9.0",
-    "better-npm-run": "0.0.8",
-    "commander": "^2.9.0",
-    "css-loader": "^0.23.1",
-    "cssnano": "^3.6.2",
-    "debug": "^2.2.0",
-    "extract-text-webpack-plugin": "^1.0.1",
-    "file-loader": "^0.8.5",
-    "fs-extra": "^0.30.0",
-    "history": "^3.0.0",
-    "html-webpack-plugin": "^2.17.0",
-    "lodash": "^4.13.1",
-    "offline-plugin": "^3.3.0",
-    "postcss-import": "^8.1.2",
-    "postcss-loader": "^0.9.1",
-    "precss": "^1.4.0",
-    "react": "^15.1.0",
-    "react-css-modules": "^3.7.6",
-    "react-dom": "^15.1.0",
-    "react-redux": "^4.4.5",
-    "react-router": "^2.4.1",
-    "react-router-redux": "^4.0.4",
-    "redux": "^3.5.2",
-    "redux-saga": "^0.10.4",
-    "redux-thunk": "^2.1.0",
-    "style-loader": "^0.13.1",
-    "ts-loader": "^0.8.2",
-    "ts-node": "^0.9.3",
-    "typescript": "^1.8.10",
-    "url-loader": "^0.5.7",
-    "webpack": "^1.13.1"
+    "commander": "^2.9.0"
   },
   "devDependencies": {
-    "@kadira/storybook": "^1.32.1",
-    "ava": "^0.15.0",
-    "babel-eslint": "^6.0.4",
-    "babel-plugin-webpack-loaders": "^0.5.0",
-    "babel-preset-react-hmre": "^1.1.1",
-    "connect-history-api-fallback": "^1.2.0",
-    "enzyme": "^2.3.0",
-    "eslint": "^2.10.2",
-    "eslint-config-standard": "^5.3.1",
-    "eslint-config-standard-react": "^2.4.0",
-    "eslint-loader": "^1.3.0",
-    "eslint-plugin-babel": "^3.2.0",
-    "eslint-plugin-jsx-a11y": "^1.2.3",
-    "eslint-plugin-promise": "^1.1.0",
-    "eslint-plugin-react": "^5.1.1",
-    "eslint-plugin-standard": "^1.3.2",
-    "expect": "^1.20.1",
-    "express": "^4.13.4",
-    "jsdom": "^9.1.0",
-    "nodemon": "^1.9.2",
-    "nyc": "^6.4.4",
-    "react": "^15.1.0",
-    "react-a11y": "github:romeovs/react-a11y",
-    "react-addons-test-utils": "^15.1.0",
-    "react-dom": "^15.1.0",
-    "react-transform-catch-errors": "^1.0.2",
-    "react-transform-hmr": "^1.0.4",
-    "redbox-react": "^1.2.5",
-    "redux-devtools": "^3.3.1",
-    "redux-devtools-dock-monitor": "^1.1.1",
-    "redux-devtools-log-monitor": "^1.0.11",
-    "redux-logger": "^2.6.1",
-    "rimraf": "^2.5.2",
-    "webpack-dev-middleware": "^1.6.1",
-    "webpack-hot-middleware": "^2.10.0",
-    "why-did-you-update": "0.0.8"
+    "@types/commander": "^2.3.26-alpha",
+    "@types/node": "^4.0.26-alpha",
+    "typescript": "^2.0.0-dev.20160704"
   }
 }
