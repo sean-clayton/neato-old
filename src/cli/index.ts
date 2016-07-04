@@ -19,22 +19,27 @@ const setupAction = (action) => (cliOptions = {}) => {
 
 program.command('install')
   .description('Install or update Neato in the current project')
+  .action(setupAction('install'))
 
 program.command('test')
   .description('Run tests')
   .option('-w, --watch', 'Run tests on any file change')
   .option('-c, --coverage', 'Generate a coverage report')
+  .action(setupAction('test'))
 
 program.command('lint')
   .description('Lint the code')
+  .action(setupAction('lint'))
 
 program.command('build')
   .description('Build the project')
   .option('-p, --optimize', 'Optimize the build (minify, dedup...)')
+  .action(setupAction('build'))
 
 program.command('develop')
   .description('Run development environment')
   .option('-p, --port <n>', 'Port the server will listen (default: 3000)', parseInt)
+  .action(setupAction('develop'))
 
 export default (argv: string[] = []) => {
   try {
