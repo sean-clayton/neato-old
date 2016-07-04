@@ -1,6 +1,21 @@
 import * as path from 'path'
 import * as program from 'commander'
 import neato, { MissingPackageJSONError, NeatoPathError } from '../index'
+import buildTargets from '../build-targets'
+
+const normalize = (env = buildTargets.DEVELOPMENT) => env.toLowerCase().trim()
+
+const setupAction = (action) => (cliOptions = {}) => {
+  const options = Object.assign({}, cliOptions, {
+    action,
+    buildTarget: normalize(process.env.NODE_ENV),
+    projectPath: process.env.NEATO_LINK
+      ? process.cwd()
+      : path.join(__dirname, '../../../../')
+  })
+
+  neato(options).run().then(() => process.exit(0), () => process.exit(1))
+}
 
 export default (argv: string[] = []) => {
   try {

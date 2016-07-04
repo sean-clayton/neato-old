@@ -5,14 +5,21 @@ import install from './install'
 import lint from './lint'
 import actions from '../actions'
 
-const runner = (neatoOptions) => {
+const runner = (neatoOptions: INeatoUserConfig) => {
   switch (neatoOptions.action) {
-    case value:
-      
-      break;
-  
+    case actions.TEST:
+      return test(neatoOptions)
+    case actions.DEVELOP:
+      return developmentServer(neatoOptions)
+    case actions.BUILD:
+      return build(neatoOptions)
+    case actions.INSTALL:
+      return install(neatoOptions)
+    case actions.LINT:
+      return lint(neatoOptions)
+
     default:
-      break;
+      return Promise.reject('A valid action is required.')
   }
 }
 

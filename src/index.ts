@@ -20,7 +20,7 @@ const DEFAULT_OPTIONS: INeatoConfig = {
   lint: true
 }
 
-function sanityCheck(neatoOptions) {
+function sanityCheck(neatoOptions: INeato): INeato {
   const { projectPath } = neatoOptions
 
   const packagePath = path.join(projectPath, 'package.json')
@@ -48,15 +48,16 @@ export function MissingPackageJSONError() {
 MissingPackageJSONError.prototype = Object.create(Error.prototype)
 MissingPackageJSONError.prototype.constructor = MissingPackageJSONError
 
-const neato = (options: INeatoUserConfig = {}): INeato => {
-  const neatoOptions: INeatoConfig = pipeline(
+const neato = (options: INeatoUserConfig = {}) => {
+  const neatoOptions: INeatoUserConfig = pipeline(
     sanityCheck,
     projectConfig
   )(Object.assign({}, DEFAULT_OPTIONS, options))
-  return Object.assign({}, neatoOptions, {
+  const Neato = Object.assign({}, neatoOptions, {
     run: () => run(neatoOptions),
     cli: cli
   })
+  return Neato
 }
 
 export default neato
