@@ -8,11 +8,11 @@ I'm currently changing the entire structure/purpose of this project. It's being 
   <img style="max-width:768px;" src="logo.png" />
   <br />
   <!-- Dependency Status -->
-  <a href="https://david-dm.org/sean-clayton/neato-react-starterkit" title="Dependency status"><img src="https://david-dm.org/sean-clayton/neato-react-starterkit.svg"/></a>
+  <a href="https://david-dm.org/sean-clayton/neato" title="Dependency status"><img src="https://david-dm.org/sean-clayton/neato.svg"/></a>
   <!-- devDependency Status -->
-  <a href="https://david-dm.org/sean-clayton/neato-react-starterkit#info=devDependencies" title="devDependency status"><img src="https://david-dm.org/sean-clayton/neato-react-starterkit/dev-status.svg"/></a>
+  <a href="https://david-dm.org/sean-clayton/neato#info=devDependencies" title="devDependency status"><img src="https://david-dm.org/sean-clayton/neato/dev-status.svg"/></a>
   <!-- Build Status -->
-  <a href="https://gitlab.com/seanclayton/neato-react-starterkit/commits/master"><img alt="build status" src="https://gitlab.com/seanclayton/neato-react-starterkit/badges/master/build.svg" /></a>
+  <a href="https://gitlab.com/seanclayton/neato/commits/master"><img alt="build status" src="https://gitlab.com/seanclayton/neato/badges/master/build.svg" /></a>
   <!-- Donations -->
   <a href="https://cash.me/$seanc">
     <img src="https://img.shields.io/badge/square-donate-green.svg" alt="Donate with Square Cash" />
