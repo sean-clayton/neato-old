@@ -9,7 +9,6 @@
   "main": "index.ts",
   "scripts": {
     "build": "tsc",
-    "preversion": "npm run build",
     "postversion": "git push && git push --tags && npm publish"
   },
   "engine": "node >= 6.0.0",
