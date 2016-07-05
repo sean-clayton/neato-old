@@ -8,7 +8,7 @@
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "strictNullChecks": true,
-    "types": ["node", "commander", "webpack"]
+    "types": ["node", "commander", "webpack", "fs-extra"]
   },
   "exclude": [
     "node_modules",
