@@ -29,3 +29,5 @@ const build = (neatoOptions: INeatoConfig) => new Promise((resolve, reject) => {
     }
   })
 })
+
+export default build
