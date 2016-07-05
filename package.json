@@ -11,6 +11,7 @@
     "build": "tsc",
     "postversion": "git push --tags && npm publish"
   },
+  "engine": "node >= 6.0.0",
   "repository": {
     "type": "git",
     "url": "https://gitlab.com/seanclayton/neato.git"
