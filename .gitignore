@@ -8,7 +8,6 @@ dist
 lib
 typings
 
-.vscode
 .idea
 
 .nyc_output
