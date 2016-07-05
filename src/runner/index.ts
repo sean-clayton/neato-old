@@ -1,14 +1,12 @@
 import developmentServer from './development-server'
 import build from './build'
-import test from './test'
 import install from './install'
 import lint from './lint'
 import actions from '../actions'
 
 const runner = (neatoOptions: INeatoUserConfig) => {
   switch (neatoOptions.action) {
-    case actions.TEST:
-      return test(neatoOptions)
+    // TODO: Test action
     case actions.DEVELOP:
       return developmentServer(neatoOptions)
     case actions.BUILD:
