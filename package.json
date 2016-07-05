@@ -7,6 +7,9 @@
     "neato": "./bin/neato.js"
   },
   "main": "index.ts",
+  "scripts": {
+    "postversion": "git push --tags && npm publish"
+  },
   "files": [
     "lib",
     "src",
