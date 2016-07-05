@@ -1,8 +1,8 @@
 /// <reference path="../definitions/index.d.ts" />
 
 import * as path from 'path'
-import * as cli from './cli'
-import * as projectConfig from './project-config'
+import cli from './cli'
+import projectConfig from './project-config'
 import run from './runner'
 import json from './utils/json'
 import fileExists from './utils/file-exists'
