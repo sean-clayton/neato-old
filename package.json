@@ -8,14 +8,9 @@
   },
   "main": "index.ts",
   "scripts": {
+    "build": "tsc",
     "postversion": "git push --tags && npm publish"
   },
-  "files": [
-    "lib",
-    "src",
-    "tsconfig.json",
-    "tslint.json"
-  ],
   "repository": {
     "type": "git",
     "url": "https://gitlab.com/seanclayton/neato.git"
@@ -29,6 +24,7 @@
   "devDependencies": {
     "@types/commander": "^2.3.26-alpha",
     "@types/node": "^4.0.26-alpha",
+    "@types/uglify-js": "^2.0.25-alpha",
     "@types/webpack": "^1.12.25-alpha",
     "typescript": "^2.0.0-dev.20160705",
     "webpack": "^1.13.1"
