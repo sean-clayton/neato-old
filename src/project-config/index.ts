@@ -14,3 +14,5 @@ const projectConfig = (neatoOptions) => {
   return Object.assign({}, neatoOptions, require(configPath))
 }
 
+export default projectConfig
+
