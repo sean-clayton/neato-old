@@ -27,7 +27,7 @@
     "@types/commander": "^2.3.26-alpha",
     "@types/node": "^4.0.26-alpha",
     "@types/webpack": "^1.12.25-alpha",
-    "typescript": "^2.0.0-dev.20160704",
+    "typescript": "^2.0.0-dev.20160705",
     "webpack": "^1.13.1"
   }
 }
