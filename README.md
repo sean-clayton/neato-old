@@ -5,7 +5,7 @@ I'm currently changing the entire structure/purpose of this project. It's being 
 [More information can be found here]: https://gitlab.com/seanclayton/neato/issues/9
 
 <div align="center">
-  <img style="max-width:768px;" src="logo.png" />
+  <img style="max-width:768px;" src="https://gitlab.com/seanclayton/neato/raw/master/logo.png" />
   <br />
   <!-- Dependency Status -->
   <a href="https://david-dm.org/sean-clayton/neato" title="Dependency status"><img src="https://david-dm.org/sean-clayton/neato.svg"/></a>
