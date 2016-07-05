@@ -7,8 +7,9 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "experimentalDecorators": true,
-    "strictNullChecks": true,
-    "types": ["node", "commander", "webpack", "fs-extra"]
+    "newLine": "LF",
+    "pretty": true,
+    "listFiles": true
   },
   "exclude": [
     "node_modules",

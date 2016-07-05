@@ -1,3 +1,4 @@
+/// <reference path="../typings/index.d.ts" />
 /// <reference path="../definitions/index.d.ts" />
 
 import * as path from 'path'
@@ -48,8 +49,8 @@ export function MissingPackageJSONError() {
 MissingPackageJSONError.prototype = Object.create(Error.prototype)
 MissingPackageJSONError.prototype.constructor = MissingPackageJSONError
 
-const neato = (options: INeatoUserConfig = {}) => {
-  const neatoOptions: INeatoConfig = pipeline(
+const neato = (options: INeatoConfig) => {
+  const neatoOptions: INeato = pipeline(
     sanityCheck,
     projectConfig
   )(Object.assign({}, DEFAULT_OPTIONS, options))

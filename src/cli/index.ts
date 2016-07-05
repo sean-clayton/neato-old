@@ -6,7 +6,7 @@ import buildTargets from '../build-targets'
 const normalize = (env = buildTargets.DEVELOPMENT) => env.toLowerCase().trim()
 
 const setupAction = (action) => (cliOptions = {}) => {
-  const options = Object.assign({}, cliOptions, {
+  const options: INeatoConfig = Object.assign({}, cliOptions, {
     action,
     buildTarget: normalize(process.env.NODE_ENV),
     projectPath: process.env.NEATO_LINK
@@ -20,16 +20,6 @@ const setupAction = (action) => (cliOptions = {}) => {
 program.command('install')
   .description('Install or update Neato in the current project')
   .action(setupAction('install'))
-
-program.command('test')
-  .description('Run tests')
-  .option('-w, --watch', 'Run tests on any file change')
-  .option('-c, --coverage', 'Generate a coverage report')
-  .action(setupAction('test'))
-
-program.command('lint')
-  .description('Lint the code')
-  .action(setupAction('lint'))
 
 program.command('build')
   .description('Build the project')

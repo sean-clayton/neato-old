@@ -31,7 +31,7 @@
     "@types/uglify-js": "^2.0.25-alpha",
     "@types/webpack": "^1.12.25-alpha",
     "template-directory": "^2.0.0",
-    "typescript": "^2.0.0-dev.20160705",
+    "typescript": "^1.8.10",
     "webpack": "^1.13.1"
   }
 }
