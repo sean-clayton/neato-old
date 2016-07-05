@@ -6,7 +6,7 @@
   "bin": {
     "neato": "./bin/neato.js"
   },
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
     "build": "tsc",
     "postversion": "git push && git push --tags && npm publish"
