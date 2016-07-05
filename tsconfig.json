@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
     "outDir": "lib",
+    "rootDir": "src",
     "target": "es6",
     "jsx": "react",
-    "module": "es2015",
+    "module": "commonjs",
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "strictNullChecks": true,
-    "types": ["node", "commander", "webpack"]
+    "types": ["node", "commander"]
   },
   "exclude": [
     "node_modules",
