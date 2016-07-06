@@ -25,11 +25,6 @@
     "webpack-dev-server": "^1.14.1"
   },
   "devDependencies": {
-    "@types/commander": "^2.3.26-alpha",
-    "@types/fs-extra": "0.0.26-alpha",
-    "@types/node": "^4.0.26-alpha",
-    "@types/uglify-js": "^2.0.25-alpha",
-    "@types/webpack": "^1.12.25-alpha",
     "template-directory": "^2.0.0",
     "typescript": "^1.8.10",
     "webpack": "^1.13.1"
