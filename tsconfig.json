@@ -7,7 +7,6 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "experimentalDecorators": true,
-    "newLine": "LF",
     "pretty": true,
     "listFiles": true
   },
