@@ -9,8 +9,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "prepublish": "npm run build",
-    "postpublish": "git push && git push --tags",
+    "prepublish": "not-in-install && npm run build && git push && git push --tags || in-install",
     "postinstall": "node ./bin/neato.js install"
   },
   "engine": "node >= 6.0.0",
