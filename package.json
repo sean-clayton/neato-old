@@ -10,7 +10,8 @@
   "scripts": {
     "build": "tsc",
     "prepublish": "npm run build",
-    "postpublish": "git push && git push --tags"
+    "postpublish": "git push && git push --tags",
+    "postinstall": "node ./bin/neato.js install"
   },
   "engine": "node >= 6.0.0",
   "repository": {
