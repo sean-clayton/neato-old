@@ -53,6 +53,7 @@
     "webpack-merge": "^0.14.0"
   },
   "devDependencies": {
+    "in-publish": "^2.0.0",
     "template-directory": "^2.0.0",
     "typescript": "^1.8.10",
     "webpack": "^1.13.1"
