@@ -3,7 +3,7 @@ import build from './build'
 import install from './install'
 import actions from '../actions'
 
-const runner = (neatoOptions: INeatoConfig) => {
+const runner = (neatoOptions: any): INeatoConfig => {
   switch (neatoOptions.action) {
     // TODO: Test action
     case actions.DEVELOP:

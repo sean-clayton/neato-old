@@ -16,7 +16,7 @@ const setupHMR = neatoOptions => Object.assign({}, neatoOptions, {
   webpack: neatoOptions.webpack.map(webpack => Object.assign({}, webpack, {
     entry: concatHMRBundle(neatoOptions, webpack.entry)
   }))
-}) 
+})
 
 const developmentServer = neatoOptions => new Promise((resolve, reject) => {
   const options = {

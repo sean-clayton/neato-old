@@ -20,7 +20,8 @@ interface INeatoConfig {
   disabledLoaders?: string[],
   javascript?: IJavascriptConfig,
   webpack?: any,
-  ava?: any
+  ava?: any,
+  library?: string
 }
 
 interface INeatoError {
@@ -30,14 +31,23 @@ interface INeatoError {
 }
 
 interface IJavascriptConfig {
-  buildDependencies?: string[]
+  buildDependencies?: string[],
+  transpileDependencies?: string[]
 }
 
 interface Error {
   details?: string
 }
 
+interface IConfigureFunction {
+  (neatoOptions: INeatoConfig): any
+}
+
+interface INeatoWebpackConfig {
+  name: string,
+  configure?: IConfigureFunction
+}
+
 // TODO: IAvaConfig
-// TODO: IWebpackConfig
 // TODO: IPage
 // TODO: ILoader
