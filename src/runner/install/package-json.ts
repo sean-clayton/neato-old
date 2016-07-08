@@ -2,8 +2,8 @@ import * as path from 'path'
 import json from '../../utils/json'
 
 const neatoScripts = {
-  "neato-build": "neato build",
-  "neato-dev": "neato develop"
+  'neato-build': 'neato build',
+  'neato-dev': 'neato develop'
 }
 
 const withoutDefaults = (scripts = {}) => {

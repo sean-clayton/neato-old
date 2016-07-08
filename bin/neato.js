@@ -1,1 +1,1 @@
-require('..').cli(process.argv)
+require('../index').cli(process.argv)
