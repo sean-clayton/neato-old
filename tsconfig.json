@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "lib",
+    "outDir": "dist",
     "rootDir": "src",
     "target": "es6",
     "jsx": "react",

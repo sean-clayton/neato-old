@@ -1,4 +1,7 @@
 {
+  "options": {
+    "ignorePath": "./.eslintignore"
+  },
   "env": {
     "node": true
   },

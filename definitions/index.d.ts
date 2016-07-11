@@ -1,7 +1,6 @@
 interface INeato extends INeatoConfig {
-  projectPath: string,
   run(): any,
-  cli: any
+  cli(): any
 }
 
 interface INeatoConfig {

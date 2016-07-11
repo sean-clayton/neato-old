@@ -4,13 +4,13 @@
   "description": "An app performance-enhancing drug that's pretty neat because of the way it is.",
   "preferGlobal": false,
   "bin": {
-    "neato": "./bin/neato.js"
+    "neato": "./lib/bin/neato.js"
   },
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && babel dist --out-dir lib",
     "prepublish": "not-in-install && npm run build && git push && git push --tags || in-install",
-    "postinstall": "node ./bin/neato.js install"
+    "postinstall": "node ./lib/bin/neato.js install"
   },
   "engine": "node >= 6.0.0",
   "repository": {
@@ -53,6 +53,7 @@
     "webpack-merge": "^0.14.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.10.1",
     "eslint": "^3.0.1",
     "eslint-config-airbnb": "^9.0.1",
     "eslint-plugin-import": "^1.10.2",

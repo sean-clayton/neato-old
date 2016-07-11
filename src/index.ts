@@ -49,11 +49,12 @@ export function MissingPackageJSONError() {
 MissingPackageJSONError.prototype = Object.create(Error.prototype)
 MissingPackageJSONError.prototype.constructor = MissingPackageJSONError
 
-const neato = (options: INeatoConfig) => {
+const neato = (options: INeatoConfig = {}): INeato => {
+  const newOptions = Object.assign({}, DEFAULT_OPTIONS, options)
   const neatoOptions: INeato = pipeline(
     sanityCheck,
     projectConfig
-  )(Object.assign({}, DEFAULT_OPTIONS, options))
+  )(newOptions)
   const Neato = Object.assign({}, neatoOptions, {
     run: () => run(neatoOptions),
     cli: cli
