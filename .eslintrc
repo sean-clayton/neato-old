@@ -1,0 +1,10 @@
+{
+  "env": {
+    "node": true
+  },
+  "extends": "airbnb",
+  "rules": {
+    "semi": [2, "never"],
+    "no-console": 0
+  }
+}
