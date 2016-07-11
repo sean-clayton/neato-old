@@ -7,8 +7,7 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "experimentalDecorators": true,
-    "pretty": true,
-    "listFiles": true
+    "pretty": true
   },
   "exclude": [
     "node_modules",
