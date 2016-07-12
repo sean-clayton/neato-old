@@ -1,4 +1,4 @@
-import chalk from 'chalk'
+import * as chalk from 'chalk'
 
 const errorStyle = chalk.bold.red
 const warningStyle = chalk.yellow

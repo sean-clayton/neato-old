@@ -14,7 +14,7 @@ import actions from '../../actions'
  */
 export default {
   name: 'library',
-  configure ({ library, projectPath, action }) {
+  configure({ library, projectPath, action }): any {
     if (!library) { return {} }
 
     const externals = probeExternals(projectPath)

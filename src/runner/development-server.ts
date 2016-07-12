@@ -1,4 +1,4 @@
-import webpack from 'webpack'
+import * as webpack from 'webpack'
 import { logError, log } from '../util/log'
 import Server from 'webpack-dev-server'
 
@@ -29,26 +29,23 @@ export default (saguiOptions) => new Promise((resolve, reject) => {
  * HMR bundle setup based on code from
  * https://github.com/webpack/webpack-dev-server/blob/master/bin/webpack-dev-server.js
  */
-function setupHMR (saguiOptions) {
-  return {
-    ...saguiOptions,
-    webpack: saguiOptions.webpack.map((webpack) => ({
-      ...webpack,
-      entry: concatHMRBundle(saguiOptions, webpack.entry)
+function setupHMR(neatoOptions) {
+  return Object.assign({}, neatoOptions, {
+    webpack: neatoOptions.webpack.map(webpackConfig => Object.assign({}, webpackConfig, {
+      entry: concatHMRBundle(neatoOptions, webpackConfig.entry)
     }))
-  }
+  })
 }
 
-function concatHMRBundle (saguiOptions, entry) {
+function concatHMRBundle (neatoOptions, entry) {
   const devClient = [
-    require.resolve('webpack-dev-server/client/') + '?http://0.0.0.0:' + saguiOptions.port,
+    require.resolve('webpack-dev-server/client/') + '?http://0.0.0.0:' + neatoOptions.port,
     'webpack/hot/dev-server'
   ]
 
   if (typeof entry === 'object' && !Array.isArray(entry)) {
-    return Object.keys(entry).reduce((entries, key) => ({
-      ...entries,
-      [key]: devClient.concat(entry[key])
+    return Object.keys(entry).reduce((entries, key) => Object.assign({}, {
+      [key]: devClient.concat(entry.key)
     }), {})
   } else {
     return devClient.concat(entry)

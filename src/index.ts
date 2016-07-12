@@ -35,12 +35,11 @@ const neato = (options = {}) => {
     sanityCheck,
     loadProjectConfig,
     configureWebpack
-  )({ ...DEFAULT_OPTIONS, ...options })
+  )(Object.assign({}, DEFAULT_OPTIONS, options))
 
-  return {
-    ...neatoOptions,
+  return Object.assign({}, neatoOptions, {
     run: () => run(neatoOptions)
-  }
+  })
 }
 
 /**

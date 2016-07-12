@@ -1,8 +1,8 @@
-import webpack from 'webpack'
+import * as webpack from 'webpack'
 
 export default {
   name: 'optimize',
-  configure ({ optimize }) {
+  configure({ optimize }): any {
     if (!optimize) {
       return {}
     }

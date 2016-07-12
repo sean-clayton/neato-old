@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync } from 'fs'
 
 export default {
   read (filename) {
-    const blob = readFileSync(filename)
+    const blob = JSON.stringify(readFileSync(filename))
     return JSON.parse(blob)
   },
 

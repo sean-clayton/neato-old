@@ -6,8 +6,7 @@ import loaders from './loaders'
 import splitArchetypes from './split-archetypes'
 
 export default (neatoOptions = {}) => {
-  return {
-    ...neatoOptions,
+  return Object.assign({}, neatoOptions, {
     webpack: splitArchetypes(neatoOptions).map(
       (neatoOptionsByArchetype) => merge.smart(
         archetypes(neatoOptionsByArchetype),
@@ -16,5 +15,5 @@ export default (neatoOptions = {}) => {
         neatoOptions.webpack || {}
       )
     )
-  }
+  })
 }
