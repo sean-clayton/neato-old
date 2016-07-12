@@ -4,6 +4,7 @@ import neato, { MissingPackageJSON, NeatoPath } from '../index'
 import buildTargets from '../build-targets'
 import { logError, logWarning } from '../util/log'
 import actions from '../actions'
+import _extends from '../util/extends'
 
 /**
  * Command line interface for Neato
@@ -25,7 +26,7 @@ export default (argv = []) => {
 }
 
 const setupAction = (action) => (cliOptions = {}) => {
-  const options = Object.assign({}, cliOptions, {
+  const options = _extends({}, cliOptions, {
     action,
     buildTarget: normalize(process.env.NODE_ENV),
     projectPath: process.env.NEATO_LINK

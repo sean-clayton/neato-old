@@ -1,3 +1,5 @@
+import _extends from '../util/extends'
+
 /**
  * Given one configuration object, it returns and array of more than one
  * with archetype specific configuration
@@ -27,12 +29,12 @@ export default function (neatoOptions) {
 
 
   if (pages && pages.length > 0) {
-    archetypes.push(Object.assign({}, { pages }, otherOptions))
+    archetypes.push(_extends({}, { pages }, otherOptions))
   }
 
   if (libraries && libraries.length > 0) {
     libraries.forEach((library) => {
-      archetypes.push(Object.assign({}, { library }, otherOptions))
+      archetypes.push(_extends({}, { library }, otherOptions))
     })
   }
 

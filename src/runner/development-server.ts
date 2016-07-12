@@ -1,6 +1,7 @@
 import * as webpack from 'webpack'
 import { logError, log } from '../util/log'
 import Server from 'webpack-dev-server'
+import _extends from '../util/extends'
 
 /**
  * Development server
@@ -30,8 +31,8 @@ export default (saguiOptions) => new Promise((resolve, reject) => {
  * https://github.com/webpack/webpack-dev-server/blob/master/bin/webpack-dev-server.js
  */
 function setupHMR(neatoOptions) {
-  return Object.assign({}, neatoOptions, {
-    webpack: neatoOptions.webpack.map(webpackConfig => Object.assign({}, webpackConfig, {
+  return _extends({}, neatoOptions, {
+    webpack: neatoOptions.webpack.map(webpackConfig => _extends({}, webpackConfig, {
       entry: concatHMRBundle(neatoOptions, webpackConfig.entry)
     }))
   })
@@ -44,7 +45,7 @@ function concatHMRBundle (neatoOptions, entry) {
   ]
 
   if (typeof entry === 'object' && !Array.isArray(entry)) {
-    return Object.keys(entry).reduce((entries, key) => Object.assign({}, {
+    return Object.keys(entry).reduce((entries, key) => _extends({}, {
       [key]: devClient.concat(entry.key)
     }), {})
   } else {

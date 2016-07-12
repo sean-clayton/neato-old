@@ -6,6 +6,7 @@ import run from './runner'
 import json from './util/json'
 import fileExists from './util/file-exists'
 import pipeline from './util/pipeline'
+import _extends from './util/extends'
 
 /**
  * Neato
@@ -31,9 +32,9 @@ import pipeline from './util/pipeline'
  * @param {Object} [options.karma] Karma configuration object to extend the internal configuration.
  */
 const neato: any = (options = {}) => {
-  const neatoOptions = pipeline(sanityCheck, loadProjectConfig, configureWebpack)(Object.assign({}, DEFAULT_OPTIONS, options))
+  const neatoOptions = pipeline(sanityCheck, loadProjectConfig, configureWebpack)(_extends({}, DEFAULT_OPTIONS, options))
 
-  return Object.assign({}, neatoOptions, {
+  return _extends({}, neatoOptions, {
     run: () => run(neatoOptions)
   })
 }

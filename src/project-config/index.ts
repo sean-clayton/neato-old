@@ -1,5 +1,6 @@
 import * as path from 'path'
 import fileExists from '../util/file-exists'
+import _extends from '../util/extends'
 
 export default (neatoOptions) => {
   const { projectPath } = neatoOptions
@@ -7,5 +8,5 @@ export default (neatoOptions) => {
 
   if (!fileExists(configPath)) { return neatoOptions }
 
-  return Object.assign({}, neatoOptions, require(configPath))
+  return _extends({}, neatoOptions, require(configPath))
 }

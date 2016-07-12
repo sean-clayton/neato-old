@@ -1,5 +1,6 @@
 import * as path from 'path'
 import json from '../../util/json'
+import _extends from '../../util/extends'
 
 const neatoScripts = {
   'neato:build': 'neato build',
@@ -19,9 +20,9 @@ export default function (projectPath) {
   const packageJSON = json.read(packagePath)
   const noDefaultsJSON = withoutDefaults(packageJSON.scripts)
 
-  json.write(packagePath, Object.assign({},
+  json.write(packagePath, _extends({},
     packageJSON, {
-    scripts: Object.assign({}, {
+    scripts: _extends({}, {
       neatoScripts,
       noDefaultsJSON
     })
@@ -40,7 +41,7 @@ function withoutDefaults (scripts = {}) {
   return Object.keys(scripts)
     .filter((key) => scripts[key] !== defaultScripts[key])
     .reduce((filtered, key) => {
-      return Object.assign({}, filtered, {
+      return _extends({}, filtered, {
         [key]: scripts[key]
       })
     }, {})
