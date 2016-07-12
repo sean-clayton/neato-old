@@ -1,4 +1,10 @@
 // Place your settings in this file to overwrite default and user settings.
 {
-  "files.eol": "\n"
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.DS_Store": true,
+    "**/lib": true
+  }
 }
