@@ -1,13 +1,5 @@
 {
-  "options": {
-    "ignorePath": "./.eslintignore"
-  },
-  "env": {
-    "node": true
-  },
-  "extends": "airbnb",
-  "rules": {
-    "semi": [2, "never"],
-    "no-console": 0
-  }
+  "extends": [
+    "eslint-config-sagui"
+  ]
 }

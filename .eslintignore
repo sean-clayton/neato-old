@@ -1,2 +1,3 @@
-lib/
-dist/
+template
+lib
+tmp
