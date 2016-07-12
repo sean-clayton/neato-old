@@ -49,8 +49,8 @@ interface IJavascriptConfig {
 }
 
 interface Error {
-  details?: string
-  code?: number
+  details?: string,
+  code?: number | string
 }
 
 interface IConfigureFunction {

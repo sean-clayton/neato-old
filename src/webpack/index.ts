@@ -5,7 +5,7 @@ import presets from './presets'
 import loaders from './loaders'
 import splitArchetypes from './split-archetypes'
 
-export default (neatoOptions = {}) => {
+export default (neatoOptions: any = {}) => {
   return Object.assign({}, neatoOptions, {
     webpack: splitArchetypes(neatoOptions).map(
       (neatoOptionsByArchetype) => merge.smart(

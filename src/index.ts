@@ -30,12 +30,8 @@ import pipeline from './util/pipeline'
  * @param {Object} [options.webpack] Webpack configuration object to extend the internal configuration.
  * @param {Object} [options.karma] Karma configuration object to extend the internal configuration.
  */
-const neato = (options = {}) => {
-  const neatoOptions = pipeline(
-    sanityCheck,
-    loadProjectConfig,
-    configureWebpack
-  )(Object.assign({}, DEFAULT_OPTIONS, options))
+const neato: any = (options = {}) => {
+  const neatoOptions = pipeline(sanityCheck, loadProjectConfig, configureWebpack)(Object.assign({}, DEFAULT_OPTIONS, options))
 
   return Object.assign({}, neatoOptions, {
     run: () => run(neatoOptions)

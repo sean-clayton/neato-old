@@ -1,4 +1,4 @@
-import webpack from 'webpack'
+import * as webpack from 'webpack'
 import { logError, log } from '../util/log'
 
 export default (neatoOptions) => new Promise((resolve, reject) => {

@@ -1,4 +1,4 @@
-import path from 'path'
+import * as path from 'path'
 import fileExists from '../util/file-exists'
 
 export default (neatoOptions) => {

@@ -17,13 +17,13 @@ const neatoScripts = {
 export default function (projectPath) {
   const packagePath = path.join(projectPath, 'package.json')
   const packageJSON = json.read(packagePath)
-  const scripts = packageJSON.scripts
+  const noDefaultsJSON = withoutDefaults(packageJSON.scripts)
 
   json.write(packagePath, Object.assign({},
     packageJSON, {
     scripts: Object.assign({}, {
       neatoScripts,
-      withoutDefaults(scripts)
+      noDefaultsJSON
     })
   }))
 }
