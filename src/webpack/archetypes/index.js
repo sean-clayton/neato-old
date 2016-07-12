@@ -8,8 +8,8 @@ const archetypes = [
   pages
 ]
 
-export default (saguiOptions) => (
+export default (neatoOptions) => (
   archetypes.reduce((webpackConfig, archetype) => (
-    merge.smart(webpackConfig, archetype.configure(saguiOptions))
+    merge.smart(webpackConfig, archetype.configure(neatoOptions))
   ), {})
 )

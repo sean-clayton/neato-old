@@ -5,15 +5,15 @@ import presets from './presets'
 import loaders from './loaders'
 import splitArchetypes from './split-archetypes'
 
-export default (saguiOptions = {}) => {
+export default (neatoOptions = {}) => {
   return {
-    ...saguiOptions,
-    webpack: splitArchetypes(saguiOptions).map(
-      (saguiOptionsByArchetype) => merge.smart(
-        archetypes(saguiOptionsByArchetype),
-        presets(saguiOptionsByArchetype),
-        loaders(saguiOptionsByArchetype),
-        saguiOptions.webpack || {}
+    ...neatoOptions,
+    webpack: splitArchetypes(neatoOptions).map(
+      (neatoOptionsByArchetype) => merge.smart(
+        archetypes(neatoOptionsByArchetype),
+        presets(neatoOptionsByArchetype),
+        loaders(neatoOptionsByArchetype),
+        neatoOptions.webpack || {}
       )
     )
   }

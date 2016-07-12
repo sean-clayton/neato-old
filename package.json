@@ -4,7 +4,7 @@
   "description": "An app performance-enhancing drug that's pretty neat because of the way it is.",
   "preferGlobal": false,
   "bin": {
-    "sagui": "./bin/sagui.js"
+    "neato": "./bin/neato.js"
   },
   "main": "index.js",
   "files": [
@@ -17,13 +17,9 @@
   ],
   "scripts": {
     "build": "rm -rf lib && babel src --out-dir lib --ignore *.spec.js",
-    "test": "npm run test:lint && npm run test:unit && npm run test:integration",
-    "test:lint": "eslint .",
-    "test:integration": "mocha --timeout 0 --compilers js:babel-register --recursive --reporter spec --fgrep [integration] ./src",
-    "test:unit": "mocha --timeout 0 --compilers js:babel-register --recursive --reporter spec --fgrep [integration] --invert ./src",
-    "test:unit:watch": "npm run test:unit -- --watch",
-    "prepublish": "not-in-install && npm prune && npm test && npm run build || in-install",
-    "postinstall": "node ./bin/sagui.js install"
+    "lint": "eslint .",
+    "prepublish": "not-in-install && npm prune && npm run lint && npm run build || in-install",
+    "postinstall": "node ./bin/neato.js install"
   },
   "engine": "node >= 6.0.0",
   "repository": {

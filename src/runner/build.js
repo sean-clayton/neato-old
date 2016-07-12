@@ -1,8 +1,8 @@
 import webpack from 'webpack'
 import { logError, log } from '../util/log'
 
-export default (saguiOptions) => new Promise((resolve, reject) => {
-  const compiler = webpack(saguiOptions.webpack)
+export default (neatoOptions) => new Promise((resolve, reject) => {
+  const compiler = webpack(neatoOptions.webpack)
 
   compiler.run((err, stats) => {
     var softErrors = !err && stats.toJson().errors

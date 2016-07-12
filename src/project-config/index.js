@@ -1,11 +1,11 @@
 import path from 'path'
 import fileExists from '../util/file-exists'
 
-export default (saguiOptions) => {
-  const { projectPath } = saguiOptions
-  const configPath = path.join(projectPath, 'sagui.config.js')
+export default (neatoOptions) => {
+  const { projectPath } = neatoOptions
+  const configPath = path.join(projectPath, 'neato.config.js')
 
-  if (!fileExists(configPath)) { return saguiOptions }
+  if (!fileExists(configPath)) { return neatoOptions }
 
-  return { ...saguiOptions, ...require(configPath) }
+  return { ...neatoOptions, ...require(configPath) }
 }

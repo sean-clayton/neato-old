@@ -1,18 +1,18 @@
 import path from 'path'
 import program from 'commander'
-import sagui, { MissingPackageJSON, SaguiPath } from '../index'
+import neato, { MissingPackageJSON, NeatoPath } from '../index'
 import buildTargets from '../build-targets'
 import { logError, logWarning } from '../util/log'
 import actions from '../actions'
 
 /**
- * Command line interface for Sagui
+ * Command line interface for Neato
  */
 export default (argv = []) => {
   try {
     program.parse(argv)
   } catch (e) {
-    if (e instanceof SaguiPath || e instanceof MissingPackageJSON) {
+    if (e instanceof NeatoPath || e instanceof MissingPackageJSON) {
       logWarning(e.message)
       return
     }
@@ -29,18 +29,18 @@ const setupAction = (action) => (cliOptions = {}) => {
     ...cliOptions,
     action,
     buildTarget: normalize(process.env.NODE_ENV),
-    projectPath: process.env.SAGUI_LINK
+    projectPath: process.env.NEATO_LINK
       ? process.cwd()
       : path.join(__dirname, '../../../../')
   }
 
-  sagui(options).run().then(() => process.exit(0), () => process.exit(1))
+  neato(options).run().then(() => process.exit(0), () => process.exit(1))
 }
 
 const normalize = (env = buildTargets.DEVELOPMENT) => env.toLowerCase().trim()
 
 program.command(actions.INSTALL)
-  .description('Install or update sagui in the current project')
+  .description('Install or update Neato in the current project')
   .action(setupAction(actions.INSTALL))
 
 program.command(actions.TEST)

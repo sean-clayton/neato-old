@@ -16,8 +16,8 @@ const presets = [
   optimize
 ]
 
-export default (saguiOptions) => (
+export default (neatoOptions) => (
   presets.reduce((webpackConfig, preset) => (
-    merge.smart(webpackConfig, preset.configure(saguiOptions))
+    merge.smart(webpackConfig, preset.configure(neatoOptions))
   ), {})
 )

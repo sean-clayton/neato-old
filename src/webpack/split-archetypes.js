@@ -8,10 +8,10 @@
  * This function turns { libraries } into { library }, check the tests for
  * more information.
  */
-export default function (saguiOptions) {
+export default function (neatoOptions) {
   const archetypes = []
 
-  const { pages, libraries, ...otherOptions } = saguiOptions
+  const { pages, libraries, ...otherOptions } = neatoOptions
 
   if (pages && pages.length > 0) {
     archetypes.push({ pages, ...otherOptions })

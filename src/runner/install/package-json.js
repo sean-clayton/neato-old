@@ -1,17 +1,17 @@
 import path from 'path'
 import json from '../../util/json'
 
-const saguiScripts = {
-  'build': 'sagui build',
-  'develop': 'sagui develop --port 3000',
-  'dist': 'cross-env NODE_ENV=production sagui build --optimize',
-  'start': 'npm run develop',
-  'test': 'npm run test:lint && npm run test:typecheck && npm run test:unit',
-  'test:coverage': 'npm run test:unit -- --coverage',
-  'test:lint': 'sagui lint',
-  'test:typecheck': 'sagui typecheck',
-  'test:unit': 'cross-env NODE_ENV=test sagui test',
-  'test:unit:watch': 'npm run test:unit -- --watch'
+const neatoScripts = {
+  'neato:build': 'neato build',
+  'neato:develop': 'neato develop --port 3000',
+  'neato:dist': 'cross-env NODE_ENV=production neato build --optimize',
+  'neato:start': 'npm run develop',
+  'neato:lint': 'neato lint',
+  'neato:test': 'npm run neato:lint && npm run neato:test:typecheck && npm run neato:test:unit',
+  'neato:test:coverage': 'npm run neato:test:unit -- --coverage',
+  'neato:test:typecheck': 'neato typecheck',
+  'neato:test:unit': 'cross-env NODE_ENV=test neato test',
+  'neato:test:unit:watch': 'npm run neato:test:unit -- --watch'
 }
 
 export default function (projectPath) {
@@ -21,7 +21,7 @@ export default function (projectPath) {
   json.write(packagePath, {
     ...packageJSON,
     scripts: {
-      ...saguiScripts,
+      ...neatoScripts,
       ...withoutDefaults(packageJSON.scripts)
     }
   })

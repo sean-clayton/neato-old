@@ -1,7 +1,6 @@
 import path from 'path'
 import cli from './cli'
 import loadProjectConfig from './project-config'
-import configureKarma from './karma'
 import configureWebpack from './webpack'
 import run from './runner'
 import json from './util/json'
@@ -9,13 +8,13 @@ import fileExists from './util/file-exists'
 import pipeline from './util/pipeline'
 
 /**
- * Sagui
+ * Neato
  *
- * This function takes a single sagui options object,
+ * This function takes a single Neato options object,
  * prepare all the required Webpack / Karma configurations
  * and execute the requested action.
  *
- * @param {Object} options Sagui options object
+ * @param {Object} options Neato options object
  * @param {string} options.projectPath Full path of the root directory of the project being built.
  * @param {string} options.buildTarget Target: (development, production, test).
  * @param {string} options.action Action: (develop, test, build)
@@ -31,30 +30,29 @@ import pipeline from './util/pipeline'
  * @param {Object} [options.webpack] Webpack configuration object to extend the internal configuration.
  * @param {Object} [options.karma] Karma configuration object to extend the internal configuration.
  */
-const sagui = (options = {}) => {
-  const saguiOptions = pipeline(
+const neato = (options = {}) => {
+  const neatoOptions = pipeline(
     sanityCheck,
     loadProjectConfig,
-    configureWebpack,
-    configureKarma
+    configureWebpack
   )({ ...DEFAULT_OPTIONS, ...options })
 
   return {
-    ...saguiOptions,
-    run: () => run(saguiOptions)
+    ...neatoOptions,
+    run: () => run(neatoOptions)
   }
 }
 
 /**
  * Command Line Interface
  */
-sagui.cli = cli
+neato.cli = cli
 
-export default sagui
+export default neato
 
 const DEFAULT_OPTIONS = {
   port: 3000,
-  saguiPath: path.join(__dirname, '../'),
+  neatoPath: path.join(__dirname, '../'),
   hotReloading: true,
   optimize: false,
   defineNodeEnv: true,
@@ -68,16 +66,16 @@ const DEFAULT_OPTIONS = {
   karma: {}
 }
 
-function sanityCheck (saguiOptions) {
-  const { projectPath } = saguiOptions
+function sanityCheck (neatoOptions) {
+  const { projectPath } = neatoOptions
 
   const packagePath = path.join(projectPath, 'package.json')
   if (!fileExists(packagePath)) throw new MissingPackageJSON()
 
   const packageJSON = json.read(packagePath)
-  if (packageJSON.name === 'sagui') throw new SaguiPath()
+  if (packageJSON.name === 'neato') throw new NeatoPath()
 
-  return saguiOptions
+  return neatoOptions
 }
 
 export function MissingPackageJSON () {
@@ -88,10 +86,10 @@ export function MissingPackageJSON () {
 MissingPackageJSON.prototype = Object.create(Error.prototype)
 MissingPackageJSON.prototype.constructor = MissingPackageJSON
 
-export function SaguiPath () {
-  this.name = 'SaguiPath'
-  this.message = 'Sagui CLI must not be run in Sagui\'s path'
+export function NeatoPath () {
+  this.name = 'NeatoPath'
+  this.message = 'Neato CLI must not be run in Neato\'s path'
   this.stack = (new Error()).stack
 }
-SaguiPath.prototype = Object.create(Error.prototype)
-SaguiPath.prototype.constructor = SaguiPath
+NeatoPath.prototype = Object.create(Error.prototype)
+NeatoPath.prototype.constructor = NeatoPath

@@ -4,7 +4,7 @@ import actions from '../../actions'
 
 export default {
   name: 'base',
-  configure ({ action, projectPath, saguiPath }) {
+  configure ({ action, projectPath, neatoPath }) {
     const projectSourcePath = path.join(projectPath, 'src')
 
     // Use a much faster cheap-module-eval-source-map setup when possible
@@ -25,17 +25,17 @@ export default {
           path.join(projectPath, '/node_modules'),
           projectSourcePath,
 
-          // Sagui node_modules is required in the path to be able
+          // Neato node_modules is required in the path to be able
           // to load the `webpack-hot-middleware`
-          path.join(saguiPath, '/node_modules')
+          path.join(neatoPath, '/node_modules')
         ]
       },
       resolveLoader: {
-        // Should first try to resolve loaders nested within Sagui.
+        // Should first try to resolve loaders nested within Neato.
         // This fixes an issue in NPM v2 where webpack incorrectly
         // thinks that the package `eslint` is the `eslint-loader`
         modulesDirectories: [
-          path.join(saguiPath, '/node_modules'),
+          path.join(neatoPath, '/node_modules'),
           path.join(projectPath, '/node_modules')
         ]
       }
