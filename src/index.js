@@ -62,8 +62,7 @@ const DEFAULT_OPTIONS = {
   pages: [],
   disabledLoaders: [],
   javaScript: {},
-  webpack: {},
-  karma: {}
+  webpack: {}
 }
 
 function sanityCheck (neatoOptions) {

@@ -10,7 +10,7 @@ try {
    */
   try {
     require('babel-register')({
-      only: /(sagui\/src)/
+      only: /(neato\/src)/
     })
 
     module.exports = require('./src').default
