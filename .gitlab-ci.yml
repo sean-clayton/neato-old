@@ -1,5 +1,9 @@
 image: node:6
 
+variables:
+  NPM_CONFIG_LOGLEVEL: "error"
+  NPM_CONFIG_PROGRESS: "false"
+
 before_script:
   - npm prune
   - npm i --no-optional
