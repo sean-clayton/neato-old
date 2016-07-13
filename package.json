@@ -16,7 +16,7 @@
     ".eslintrc"
   ],
   "scripts": {
-    "build": "rm -rf lib && tsc && babel dist --out-dir lib --ignore *.spec.js",
+    "build": "rm -rf lib && babel src --out-dir lib --ignore *.spec.js",
     "lint": "eslint .",
     "prepublish": "not-in-install && npm prune && npm run lint && npm run build && git push && git push --tags || in-install",
     "postinstall": "node ./bin/neato.js install"

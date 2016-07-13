@@ -6,8 +6,7 @@ import actions from '../../actions'
 
 export default {
   name: 'javaScript',
-  configure({ action, projectPath, javaScript }) {
-    javaScript = {}
+  configure ({ action, projectPath, javaScript = {} }) {
     const hmrEnv = {
       development: {
         plugins: [

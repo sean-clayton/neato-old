@@ -17,7 +17,7 @@ const presets = [
 ]
 
 export default (neatoOptions) => (
-  presets.reduce((webpackConfig, preset: any) => (
+  presets.reduce((webpackConfig, preset) => (
     merge.smart(webpackConfig, preset.configure(neatoOptions))
   ), {})
 )

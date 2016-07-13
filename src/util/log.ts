@@ -16,5 +16,5 @@ export function log (entry) {
 }
 
 function neato () {
-  return chalk.blue('Neato')
+  return chalk.dim('Neato')
 }
