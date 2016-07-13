@@ -3,7 +3,7 @@ const path = require('path')
 const neatoPath = path.join(__dirname, '..')
 
 function exec (command, cwd) {
-  // pass the parent´s stdio to the child process
+  // Pass the parent´s stdio to the child process
   // http://stackoverflow.com/a/31104898
   require('child_process').execSync(command, { cwd: cwd, stdio: [0, 1, 2] })
 }
@@ -17,10 +17,10 @@ if (process.env.TEST_TYPE === 'lint') {
 }
 
 if (process.env.TEST_TYPE === 'test_create_project') {
-  // # builds Neato before installing
+  // Builds Neato before installing
   exec('npm run build', neatoPath)
 
-  // # Create a new project and install Neato
+  // Create a new project and install Neato
   const projectPath = createTempFolder()
   exec('npm init -y .', projectPath)
   exec(`npm install --save-dev file://${neatoPath}`, projectPath)
