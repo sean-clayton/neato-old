@@ -13,7 +13,7 @@ function createTempFolder () {
 }
 
 if (process.env.TEST_TYPE === 'lint') {
-  exec('npm run test:lint', neatoPath)
+  exec('npm run lint', neatoPath)
 }
 
 if (process.env.TEST_TYPE === 'test_create_project') {
