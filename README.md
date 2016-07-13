@@ -1,9 +1,3 @@
-# WARNING!
-
-I'm currently changing the entire structure/purpose of this project. It's being changed from boilerplate code you clone to a module you install via npm. [More information can be found here].
-
-[More information can be found here]: https://gitlab.com/seanclayton/neato/issues/9
-
 <div align="center">
   <img style="max-width:768px;" src="https://gitlab.com/seanclayton/neato/raw/master/logo.png" />
   <br />
