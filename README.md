@@ -28,20 +28,6 @@ You can see [all issues with the `planned-feature` label here].
 
 [all issues with the `planned-feature` label here]: https://gitlab.com/seanclayton/neato/issues?label_name%5B%5D=planned-feature
 
-***
-
-### Why No Issues or Pull Requests on GitHub?
-I prefer to do most of my OSS stuff on [GitLab]. In fact, the repo there mirrors to GitHub, so it's the source of truth. I have it on GitHub solely because it seems like the target audience for this project most likely has a GitHub account over a GitLab account.
-
-Having to track issues and pull requests from two different places seems pretty hard to manage, so I ask you submit [issues] or [pull-requests] on [the GitLab project page]
-
-[GitLab]: https://gitlab.com
-[issues]: https://gitlab.com/seanclayton/neato/issues
-[pull-requests]: https://gitlab.com/seanclayton/neato/merge_requests
-[the GitLab project page]: https://gitlab.com/seanclayton/neato
-
-***
-
 ### Installation
 
 #### Prerequisites
@@ -49,7 +35,7 @@ Having to track issues and pull requests from two different places seems pretty 
 - Node >= 6.0
 
 ```sh
-$ npm i -S neato # Shorthand for npm install --save neato
+$ npm install --save --no-optional neato
 ```
 
 ### Known Bugs
@@ -76,13 +62,12 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 ### Acknowledgements
 
-- Structure/some techniques heavily influenced by [davezuko]'s [React Redux Starter Kit] initially
+- Heavily influenced by [Sagui]
 
-[React Redux Starter Kit]: https://github.com/davezuko/react-redux-starter-kit
-[davezuko]: https://github.com/davezuko
+[Sagui]: https://github.com/saguijs/sagui
 
 - - -
 
 <div align="center">
-  Made with :heart: from <img src="https://cdn.rawgit.com/sean-clayton/13721b3d1dadcefec06279aee37688f6/raw/d739621b15b24544605bb2e5c5d3eb364a4c9842/fleur-de-lis.svg" /> Louisville, KY
+  Made with ❤ from <img src="https://cdn.rawgit.com/sean-clayton/13721b3d1dadcefec06279aee37688f6/raw/d739621b15b24544605bb2e5c5d3eb364a4c9842/fleur-de-lis.svg" /> Louisville, KY
 </div>
