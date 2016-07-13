@@ -34,8 +34,7 @@
     "chai": "^3.3.0",
     "in-publish": "^2.0.0",
     "mocha": "^2.3.3",
-    "tmp": "0.0.28",
-    "typescript": "^2.0.0"
+    "tmp": "0.0.28"
   },
   "dependencies": {
     "autoprefixer": "^6.3.6",

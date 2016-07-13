@@ -1,4 +1,4 @@
-import * as path from 'path'
+import path from 'path'
 import cli from './cli'
 import loadProjectConfig from './project-config'
 import configureWebpack from './webpack'
