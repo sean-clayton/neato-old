@@ -18,17 +18,17 @@ stages:
   - build
   - test
 
-"Compile with Babel":
+"Compile Project":
   stage: build
   script: npm run build
 
-"Test:Lint":
+"Lint":
   variables:
     TEST_TYPE: lint
   stage: test
   script: node bin/ci.js
 
-"Test:Create Project":
+"Create Test Project":
   variables:
     TEST_TYPE: test_create_project
   stage: test
