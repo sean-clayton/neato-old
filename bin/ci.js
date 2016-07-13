@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-var path = require('path')
-var neatoPath = path.join(__dirname, '..')
+const path = require('path')
+const neatoPath = path.join(__dirname, '..')
 
 function exec (command, cwd) {
   // pass the parent´s stdio to the child process
@@ -12,29 +12,16 @@ function createTempFolder () {
   return require('tmp').dirSync().name
 }
 
-if (process.env.TEST_TYPE === 'lint_and_test_unit') {
+if (process.env.TEST_TYPE === 'lint') {
   exec('npm run test:lint', neatoPath)
-  exec('npm run test:unit', neatoPath)
-}
-
-if (process.env.TEST_TYPE === 'integration_test') {
-  exec('npm run test:integration', neatoPath)
 }
 
 if (process.env.TEST_TYPE === 'test_create_project') {
-  // # builds Sagui before installing
+  // # builds Neato before installing
   exec('npm run build', neatoPath)
 
-  var projectPath = createTempFolder()
-
-  // # Create a new project and install Sagui
+  // # Create a new project and install Neato
+  const projectPath = createTempFolder()
   exec('npm init -y .', projectPath)
-  exec('npm install --save-dev file://' + neatoPath, projectPath)
-
-  // # Run some basic scripts
-  exec('npm test', projectPath)
-  exec('npm run build', projectPath)
-  exec('npm run dist', projectPath)
-  exec('npm run test:coverage', projectPath)
+  exec(`npm install --save-dev file://${neatoPath}`, projectPath)
 }
-
