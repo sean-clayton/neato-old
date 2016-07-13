@@ -1,4 +1,4 @@
-import * as path from 'path'
+import path from 'path'
 import postCSSModulesValues from 'postcss-modules-values'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import autoprefixer from 'autoprefixer'
@@ -20,7 +20,10 @@ const defaultOptions = {
 export default {
   name: 'style',
   configure ({ action, optimize, pages = [], projectPath, style = {} }) {
-    const options = Object.assign({}, defaultOptions, style)
+    const options = {
+      ...defaultOptions,
+      ...style
+    }
 
     const shouldExtract = options.extract && pages.length > 0 && action === actions.BUILD
     const localIdentName = optimize ? '[hash]' : '[path][local]-[hash:base64:5]'

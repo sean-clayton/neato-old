@@ -5,8 +5,8 @@ export default (neatoOptions) => new Promise((resolve, reject) => {
   const compiler = webpack(neatoOptions.webpack)
 
   compiler.run((err, stats) => {
-    const softErrors = !err && stats.toJson().errors
-    const hasSoftErrors = softErrors && softErrors.length > 0
+    var softErrors = !err && stats.toJson().errors
+    var hasSoftErrors = softErrors && softErrors.length > 0
 
     if (err || hasSoftErrors) {
       logError('Build failed.')

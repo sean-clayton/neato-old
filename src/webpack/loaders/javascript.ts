@@ -1,5 +1,5 @@
 import { HotModuleReplacementPlugin } from 'webpack'
-import * as path from 'path'
+import path from 'path'
 import reactTransform from 'babel-plugin-react-transform'
 import fileExtensions from '../../file-extensions'
 import actions from '../../actions'

@@ -1,17 +1,3 @@
-// Declare node modules to TS doesn't complain
-declare module "webpack-dev-server"
-declare module "eslint"
-declare module "karma/lib/server"
-declare module "flow-bin"
-declare module "template-directory"
-declare module "webpack-merge"
-declare module "html-webpack-plugin"
-declare module "babel-plugin-react-transform"
-declare module "postcss-modules-values"
-declare module "extract-text-webpack-plugin"
-declare module "autoprefixer"
-declare module "clean-webpack-plugin"
-
 interface INeato extends INeatoConfig {
   run(): any,
   cli(): any
@@ -50,7 +36,6 @@ interface IJavascriptConfig {
 
 interface Error {
   details?: string
-  code?: number
 }
 
 interface IConfigureFunction {

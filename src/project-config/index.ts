@@ -7,5 +7,5 @@ export default (neatoOptions) => {
 
   if (!fileExists(configPath)) { return neatoOptions }
 
-  return Object.assign({}, neatoOptions, require(configPath))
+  return { ...neatoOptions, ...require(configPath) }
 }

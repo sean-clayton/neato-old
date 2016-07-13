@@ -9,7 +9,7 @@ const archetypes = [
 ]
 
 export default (neatoOptions) => (
-  archetypes.reduce((webpackConfig, archetype: any) => (
+  archetypes.reduce((webpackConfig, archetype) => (
     merge.smart(webpackConfig, archetype.configure(neatoOptions))
   ), {})
 )

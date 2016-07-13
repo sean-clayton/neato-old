@@ -1,5 +1,5 @@
-import * as path from 'path'
-import * as program from 'commander'
+import path from 'path'
+import program from 'commander'
 import neato, { MissingPackageJSON, NeatoPath } from '../index'
 import buildTargets from '../build-targets'
 import { logError, logWarning } from '../util/log'
@@ -25,13 +25,14 @@ export default (argv = []) => {
 }
 
 const setupAction = (action) => (cliOptions = {}) => {
-  const options = Object.assign({}, cliOptions, {
+  const options = {
+    ...cliOptions,
     action,
     buildTarget: normalize(process.env.NODE_ENV),
     projectPath: process.env.NEATO_LINK
       ? process.cwd()
       : path.join(__dirname, '../../../../')
-  })
+  }
 
   neato(options).run().then(() => process.exit(0), () => process.exit(1))
 }

@@ -1,4 +1,4 @@
-import * as path from 'path'
+import path from 'path'
 import json from '../../util/json'
 
 const neatoScripts = {
@@ -17,15 +17,14 @@ const neatoScripts = {
 export default function (projectPath) {
   const packagePath = path.join(projectPath, 'package.json')
   const packageJSON = json.read(packagePath)
-  const scripts = packageJSON.scripts
 
-  json.write(packagePath, Object.assign({},
-    packageJSON, {
-    scripts: Object.assign({}, {
-      neatoScripts,
-      withoutDefaults(scripts)
-    })
-  }))
+  json.write(packagePath, {
+    ...packageJSON,
+    scripts: {
+      ...neatoScripts,
+      ...withoutDefaults(packageJSON.scripts)
+    }
+  })
 }
 
 /**
@@ -38,10 +37,11 @@ function withoutDefaults (scripts = {}) {
   }
 
   return Object.keys(scripts)
-    .filter((key) => scripts[key] !== defaultScripts[key])
+    .filter((key) => !scripts[key] !== '' && scripts[key] !== defaultScripts[key])
     .reduce((filtered, key) => {
-      return Object.assign({}, filtered, {
+      return {
+        ...filtered,
         [key]: scripts[key]
-      })
+      }
     }, {})
 }

@@ -2,7 +2,7 @@ import fileExtensions from '../../file-extensions'
 
 export default {
   name: 'babel',
-  configure({ coverage }): any {
+  configure ({ coverage }) {
     if (!coverage) {
       return {}
     }

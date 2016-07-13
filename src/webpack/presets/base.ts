@@ -1,5 +1,5 @@
 import { NoErrorsPlugin } from 'webpack'
-import * as path from 'path'
+import path from 'path'
 import actions from '../../actions'
 
 export default {
