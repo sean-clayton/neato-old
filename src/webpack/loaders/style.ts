@@ -4,7 +4,6 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import autoprefixer from 'autoprefixer'
 import fileExtensions from '../../file-extensions'
 import actions from '../../actions'
-import _extends from '../../util/extends'
 
 const defaultOptions = {
   cssModules: true,
@@ -21,7 +20,7 @@ const defaultOptions = {
 export default {
   name: 'style',
   configure ({ action, optimize, pages = [], projectPath, style = {} }) {
-    const options = _extends({}, defaultOptions, style)
+    const options = Object.assign({}, defaultOptions, style)
 
     const shouldExtract = options.extract && pages.length > 0 && action === actions.BUILD
     const localIdentName = optimize ? '[hash]' : '[path][local]-[hash:base64:5]'
