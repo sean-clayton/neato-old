@@ -24,7 +24,7 @@ stages:
   stage: test
   script: node bin/ci.js
 
-"Test:Create Project"
+"Test:Create Project":
   variables:
     TEST_TYPE: test_create_project
   stage: test
