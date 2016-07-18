@@ -3,7 +3,7 @@ import rootReducer from 'reducers/rootReducer'
 import { throttle } from 'lodash'
 import createSagaMiddleware from 'redux-saga'
 import thunk from 'redux-thunk'
-import { getLocalStorage, setLocalStorage } from 'utils/localStorage'
+import { getLocalStorage, setLocalStorage } from 'utils/storage'
 
 const sagaMiddleware = createSagaMiddleware()
 let middlewares = [thunk, sagaMiddleware]
