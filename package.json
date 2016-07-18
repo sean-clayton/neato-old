@@ -68,6 +68,7 @@
     "json-loader": "^0.5.4",
     "lodash.uniq": "^4.3.0",
     "node-sass": "^3.3.3",
+    "offline-plugin": "^3.4.2",
     "parent-module": "^0.1.0",
     "postcss-loader": "^0.9.1",
     "postcss-modules-values": "^1.1.1",

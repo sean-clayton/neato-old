@@ -6,6 +6,7 @@ import coverage from './coverage'
 import defineNodeENV from './define-node-env'
 import eslint from './eslint'
 import optimize from './optimize'
+import offline from './offline'
 
 const presets = [
   base,
@@ -13,7 +14,8 @@ const presets = [
   coverage,
   defineNodeENV,
   eslint,
-  optimize
+  optimize,
+  offline
 ]
 
 export default (neatoOptions) => (
