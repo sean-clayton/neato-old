@@ -9,7 +9,7 @@ const neatoScripts = {
     'cross-env NODE_ENV=production neato build --optimize'
   ],
   'neato:start': [
-    'npm run neato:develop'
+    'npm run neato:dev'
   ],
   'neato:lint': [
     'neato lint'
