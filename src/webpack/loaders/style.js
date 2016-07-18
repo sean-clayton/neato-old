@@ -19,7 +19,7 @@ const defaultOptions = {
  */
 export default {
   name: 'style',
-  configure ({ action, optimize, pages = [], projectPath, style = {} }) {
+  configure({ action, optimize, pages = [], projectPath, style = {} }) {
     const options = {
       ...defaultOptions,
       ...style

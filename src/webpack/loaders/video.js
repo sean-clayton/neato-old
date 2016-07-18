@@ -2,7 +2,7 @@ import fileExtensions from '../../file-extensions'
 
 export default {
   name: 'video',
-  configure () {
+  configure() {
     return {
       module: {
         loaders: [

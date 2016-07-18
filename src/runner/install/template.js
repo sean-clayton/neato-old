@@ -8,18 +8,19 @@ import templatesDotFiles from './template-dotfiles'
 const basePath = join(__dirname, '../../../template/base')
 const dotFilesPath = join(__dirname, '../../../template/dot-files')
 
-export default function (projectPath) {
+export default function(projectPath) {
   const srcFolder = join(projectPath, 'src')
 
   if (!fileExists(srcFolder)) {
     copyBase(projectPath)
     copyDotFiles(projectPath)
-  } else {
+  }
+  else {
     logWarning('skipped installing files in src, folder already exists')
   }
 }
 
-function copyBase (projectPath) {
+function copyBase(projectPath) {
   const projectName = basename(projectPath)
 
   template(basePath, projectPath, {
@@ -27,7 +28,7 @@ function copyBase (projectPath) {
   }, { clobber: false })
 }
 
-function copyDotFiles (projectPath) {
+function copyDotFiles(projectPath) {
   Object.keys(templatesDotFiles)
     .map((key) => [key, templatesDotFiles[key]])
     .map(([templateName, path]) => copySync(

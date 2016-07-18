@@ -65,7 +65,7 @@ const DEFAULT_OPTIONS = {
   webpack: {}
 }
 
-function sanityCheck (neatoOptions) {
+function sanityCheck(neatoOptions) {
   const { projectPath } = neatoOptions
 
   const packagePath = path.join(projectPath, 'package.json')
@@ -77,7 +77,7 @@ function sanityCheck (neatoOptions) {
   return neatoOptions
 }
 
-export function MissingPackageJSON () {
+export function MissingPackageJSON() {
   this.name = 'MissingPackageJSON'
   this.message = 'Must be executed in target project\'s package.json path'
   this.stack = (new Error()).stack
@@ -85,7 +85,7 @@ export function MissingPackageJSON () {
 MissingPackageJSON.prototype = Object.create(Error.prototype)
 MissingPackageJSON.prototype.constructor = MissingPackageJSON
 
-export function NeatoPath () {
+export function NeatoPath() {
   this.name = 'NeatoPath'
   this.message = 'Neato CLI must not be run in Neato\'s path'
   this.stack = (new Error()).stack

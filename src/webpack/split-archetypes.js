@@ -8,7 +8,7 @@
  * This function turns { libraries } into { library }, check the tests for
  * more information.
  */
-export default function (neatoOptions) {
+export default function(neatoOptions) {
   const archetypes = []
 
   const { pages, libraries, ...otherOptions } = neatoOptions

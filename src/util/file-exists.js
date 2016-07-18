@@ -1,10 +1,11 @@
 import { statSync } from 'fs'
 
-export default function fileExists (file) {
+export default function fileExists(file) {
   try {
     statSync(file)
     return true
-  } catch (e) {
+  }
+  catch (e) {
     return false
   }
 }

@@ -2,7 +2,7 @@
 const path = require('path')
 const neatoPath = path.join(__dirname, '..')
 
-function exec (command, cwd, callback = (command, cwd) => console.info(`Finished running "${command}" in "${cwd}"`)) {
+function exec(command, cwd, callback = (command, cwd) => console.info(`Finished running "${command}" in "${cwd}"`)) {
   // Pass the parent´s stdio to the child process
   // http://stackoverflow.com/a/31104898
   require('child_process').execSync(command, { cwd: cwd, stdio: [0, 1, 2] })

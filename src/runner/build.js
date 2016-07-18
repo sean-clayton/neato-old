@@ -17,13 +17,14 @@ export default (neatoOptions) => new Promise((resolve, reject) => {
       }
 
       if (hasSoftErrors) {
-        softErrors.forEach(function (error) {
+        softErrors.forEach(error => {
           console.error(error)
         })
       }
 
       reject()
-    } else {
+    }
+    else {
       log('Built successfull.')
       resolve()
     }

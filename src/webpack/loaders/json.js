@@ -2,7 +2,7 @@ import fileExtensions from '../../file-extensions'
 
 export default {
   name: 'json',
-  configure () {
+  configure() {
     return {
       module: {
         loaders: [

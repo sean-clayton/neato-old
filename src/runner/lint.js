@@ -14,7 +14,8 @@ export default ({ projectPath }) => new Promise((resolve, reject) => {
     logError('Lint failed:')
     console.log(formatter(report.results))
     reject()
-  } else {
+  }
+  else {
     log('Lint completed without errors.')
     resolve()
   }

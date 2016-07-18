@@ -11,7 +11,8 @@ import actions from '../actions'
 export default (argv = []) => {
   try {
     program.parse(argv)
-  } catch (e) {
+  }
+  catch (e) {
     if (e instanceof NeatoPath || e instanceof MissingPackageJSON) {
       logWarning(e.message)
       return

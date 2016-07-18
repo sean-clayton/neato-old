@@ -5,22 +5,24 @@ import Server from 'webpack-dev-server'
 /**
  * Development server
  */
-export default (saguiOptions) => new Promise((resolve, reject) => {
+export default (neatoOptions) => new Promise((resolve, reject) => {
   const options = {
     hot: true,
-    historyApiFallback: saguiOptions.pages && saguiOptions.pages[0] && `${saguiOptions.pages[0]}.html`
+    historyApiFallback: neatoOptions.pages && neatoOptions.pages[0] && `${neatoOptions.pages[0]}.html`
   }
 
   try {
-    new Server(webpack(setupHMR(saguiOptions).webpack), options).listen(saguiOptions.port, '0.0.0.0', (err) => {
+    new Server(webpack(setupHMR(neatoOptions).webpack), options).listen(neatoOptions.port, '0.0.0.0', (err) => {
       if (err) {
-        logError(`Server failed to started at http://localhost:${saguiOptions.port}`)
+        logError(`Server failed to started at http://localhost:${neatoOptions.port}`)
         reject(err)
-      } else {
-        log(`Server started at http://localhost:${saguiOptions.port}/webpack-dev-server/`)
+      }
+      else {
+        log(`Server started at http://localhost:${neatoOptions.port}/webpack-dev-server/`)
       }
     })
-  } catch (e) {
+  }
+  catch (e) {
     reject(e)
   }
 })
@@ -29,7 +31,7 @@ export default (saguiOptions) => new Promise((resolve, reject) => {
  * HMR bundle setup based on code from
  * https://github.com/webpack/webpack-dev-server/blob/master/bin/webpack-dev-server.js
  */
-function setupHMR (saguiOptions) {
+function setupHMR(saguiOptions) {
   return {
     ...saguiOptions,
     webpack: saguiOptions.webpack.map((webpack) => ({
@@ -39,7 +41,7 @@ function setupHMR (saguiOptions) {
   }
 }
 
-function concatHMRBundle (saguiOptions, entry) {
+function concatHMRBundle(saguiOptions, entry) {
   const devClient = [
     require.resolve('webpack-dev-server/client/') + '?http://0.0.0.0:' + saguiOptions.port,
     'webpack/hot/dev-server'
@@ -50,7 +52,8 @@ function concatHMRBundle (saguiOptions, entry) {
       ...entries,
       [key]: devClient.concat(entry[key])
     }), {})
-  } else {
+  }
+  else {
     return devClient.concat(entry)
   }
 }

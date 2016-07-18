@@ -4,7 +4,7 @@ import actions from '../../actions'
 
 export default {
   name: 'eslint',
-  configure ({ watch, action, projectPath, coverage }) {
+  configure({ watch, action, projectPath, coverage }) {
     // We need to disable linting when generating coverage because the code is instrumented
     // and therefore it's not following the linting rules anymore.
     if (coverage) {

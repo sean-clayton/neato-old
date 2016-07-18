@@ -4,7 +4,7 @@ import actions from '../../actions'
 
 export default {
   name: 'base',
-  configure ({ action, projectPath, neatoPath }) {
+  configure({ action, projectPath, neatoPath }) {
     const projectSourcePath = path.join(projectPath, 'src')
 
     // Use a much faster cheap-module-eval-source-map setup when possible

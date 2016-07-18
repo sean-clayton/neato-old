@@ -2,7 +2,7 @@ import fileExtensions from '../../file-extensions'
 
 export default {
   name: 'yaml',
-  configure () {
+  configure() {
     return {
       module: {
         loaders: [

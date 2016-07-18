@@ -14,7 +14,7 @@ import actions from '../../actions'
  */
 export default {
   name: 'library',
-  configure ({ library, projectPath, action }) {
+  configure({ library, projectPath, action }) {
     if (!library) { return {} }
 
     const externals = probeExternals(projectPath)
@@ -31,7 +31,7 @@ export default {
   }
 }
 
-function probeExternals (projectPath) {
+function probeExternals(projectPath) {
   const projectPackageJSON = require(join(projectPath, 'package.json'))
   return Object.keys(projectPackageJSON.peerDependencies || {})
 }

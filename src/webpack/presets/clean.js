@@ -2,7 +2,7 @@ import CleanWebpackPlugin from 'clean-webpack-plugin'
 
 export default {
   name: 'clean',
-  configure ({ projectPath }) {
+  configure({ projectPath }) {
     return {
       plugins: [
         new CleanWebpackPlugin(['dist'], {

@@ -5,7 +5,7 @@ import actions from '../../actions'
 
 export default {
   name: 'pages',
-  configure ({ pages = [], action, projectPath }) {
+  configure({ pages = [], action, projectPath }) {
     if (pages.length === 0) { return {} }
 
     const entry = configureEntry(pages)
@@ -23,7 +23,7 @@ export default {
   }
 }
 
-function configureEntry (pages) {
+function configureEntry(pages) {
   let entry = {}
 
   pages.forEach((page) => {
@@ -33,7 +33,7 @@ function configureEntry (pages) {
   return entry
 }
 
-function configurePlugins (pages, action) {
+function configurePlugins(pages, action) {
   const plugins = pages.map((page) => {
     return new HtmlWebpackPlugin({
       template: `${page}.html`,

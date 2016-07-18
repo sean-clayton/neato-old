@@ -8,7 +8,8 @@ export default ({ projectPath }) => new Promise((resolve, reject) => {
   try {
     packageJSON(projectPath)
     template(projectPath)
-  } catch (e) {
+  }
+  catch (e) {
     reject(e)
   }
 

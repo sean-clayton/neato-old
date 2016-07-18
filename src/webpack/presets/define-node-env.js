@@ -2,7 +2,7 @@ import { DefinePlugin } from 'webpack'
 
 export default {
   name: 'define-node-env',
-  configure () {
+  configure() {
     return {
       plugins: [
         new DefinePlugin({
