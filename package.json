@@ -70,6 +70,7 @@
     "node-sass": "^3.3.3",
     "offline-plugin": "^3.4.2",
     "parent-module": "^0.1.0",
+    "postcss-easy-import": "^1.0.1",
     "postcss-flexbugs-fixes": "^2.0.0",
     "postcss-loader": "^0.9.1",
     "postcss-modules-values": "^1.1.1",
