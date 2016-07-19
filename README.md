@@ -62,12 +62,12 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 ### Acknowledgements
 
-- Heavily influenced by [Sagui]
+- Heavily influenced by and originally forked from [Sagui]
 
 [Sagui]: https://github.com/saguijs/sagui
 
 - - -
 
 <div align="center">
-  Made with ❤ from <img src="https://cdn.rawgit.com/sean-clayton/13721b3d1dadcefec06279aee37688f6/raw/d739621b15b24544605bb2e5c5d3eb364a4c9842/fleur-de-lis.svg" /> Louisville, KY
+  Made with much love from Louisville, KY
 </div>
