@@ -8,7 +8,7 @@ export default {
         loaders: [
           {
             test: fileExtensions.test.IMAGE,
-            loader: 'url-loader?limit=8192&name=[name]-[hash].[ext]'
+            loader: 'url-loader?limit=8192&name=[name]-[chunkhash].[ext]'
           }
         ]
       }

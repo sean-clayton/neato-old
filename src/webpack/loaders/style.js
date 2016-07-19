@@ -1,5 +1,7 @@
-import path from 'path'
 import postCSSModulesValues from 'postcss-modules-values'
+import postCSSEasyImport from 'postcss-easy-import'
+import precss from 'precss'
+import postCSSFlexbugsFixes from 'postcss-flexbugs-fixes'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import autoprefixer from 'autoprefixer'
 import fileExtensions from '../../file-extensions'
@@ -26,10 +28,9 @@ export default {
     }
 
     const shouldExtract = options.extract && pages.length > 0 && action === actions.BUILD
-    const localIdentName = optimize ? '[hash]' : '[path][local]-[hash:base64:5]'
+    const localIdentName = optimize ? '[name]_[local]__[hash]' : '[name]_[path]_[local]__[hash:base64:5]'
 
-    const extractSass = new ExtractTextPlugin('[name]-[hash]-0.css')
-    const extractCss = new ExtractTextPlugin('[name]-[hash]-1.css')
+    const extractCss = new ExtractTextPlugin('[name]-[chunkhash].css', { allChunks: true })
 
     // toggle source maps and CSS Modules
     const cssModules = options.cssModules ? 'modules' : ''
@@ -42,24 +43,13 @@ export default {
       'postcss-loader'
     ]
 
-    // importLoaders: use the following sass-loader in @import statements
-    // modules: enable css-modules
-    const sassLoaders = [
-      `css?${cssModules}&${sourceMaps}&importLoaders=3&localIdentName=${localIdentName}`,
-      'postcss-loader',
-      'resolve-url', // Fixes loading of relative URLs in nested Sass modules
-      `sass?${sourceMaps}&outputStyle=expanded&` +
-        'includePaths[]=' + (path.resolve(projectPath, './node_modules'))
-    ]
-
     return {
       postcss: [
-        // allow importing values (variables) between css modules
-        // see: https://github.com/css-modules/postcss-modules-values#usage
+        precss,
+        postCSSEasyImport,
         postCSSModulesValues,
-
-        // Support browser prefixes for any browser with greater than 5% markeshare
-        autoprefixer({ browsers: ['> 5%'] })
+        autoprefixer({ browsers: ['last 2 versions'] }),
+        postCSSFlexbugsFixes
       ],
 
       module: {
@@ -69,17 +59,11 @@ export default {
             loader: shouldExtract
               ? extractCss.extract(cssLoaders)
               : ['style', ...cssLoaders].join('!')
-          },
-          {
-            test: fileExtensions.test.SCSS,
-            loader: shouldExtract
-              ? extractSass.extract(sassLoaders)
-              : ['style', ...sassLoaders].join('!')
           }
         ]
       },
 
-      plugins: shouldExtract ? [extractCss, extractSass] : []
+      plugins: shouldExtract ? [extractCss] : []
     }
   }
 }

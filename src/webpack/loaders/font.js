@@ -8,19 +8,19 @@ export default {
         loaders: [
           {
             test: fileExtensions.test.WOFF,
-            loader: 'file?name=[name]-[hash].[ext]&mimetype=application/font-woff'
+            loader: 'file?name=[name]-[chunkhash].[ext]&mimetype=application/font-woff'
           },
           {
             test: fileExtensions.test.WOFF2,
-            loader: 'file?name=[name]-[hash].[ext]&mimetype=application/font-woff'
+            loader: 'file?name=[name]-[chunkhash].[ext]&mimetype=application/font-woff'
           },
           {
             test: fileExtensions.test.TTF,
-            loader: 'file?name=[name]-[hash].[ext]&mimetype=application/octet-stream'
+            loader: 'file?name=[name]-[chunkhash].[ext]&mimetype=application/octet-stream'
           },
           {
             test: fileExtensions.test.EOT,
-            loader: 'file?name=[name]-[hash].[ext]'
+            loader: 'file?name=[name]-[chunkhash].[ext]'
           }
         ]
       }
