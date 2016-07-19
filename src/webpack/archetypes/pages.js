@@ -5,17 +5,17 @@ import actions from '../../actions'
 
 export default {
   name: 'pages',
-  configure({ pages = [], action, projectPath }) {
+  configure({ pages = [], action, projectPath, optimize, vendor = [] }) {
     if (pages.length === 0) { return {} }
 
-    const entry = configureEntry(pages)
+    const entry = configureEntry(pages, vendor)
     const plugins = configurePlugins(pages, action)
 
     return {
       output: {
         path: join(projectPath, 'dist'),
-        filename: '[name]-[hash].js',
-        chunkFilename: '[name]-[hash].chunk.js'
+        filename: optimize ? '[name]-[chunkhash].js' : '[name]-[hash].js',
+        chunkFilename: optimize ? '[name]-[chunkhash].chunk.js' : '[name]-[hash].chunk.js'
       },
       plugins,
       entry
@@ -23,12 +23,15 @@ export default {
   }
 }
 
-function configureEntry(pages) {
+function configureEntry(pages, vendor) {
   let entry = {}
 
   pages.forEach((page) => {
+    if (page === 'vendor') throw new Error('Reserved name "vendor"')
     entry[page] = [`./${page}`]
   })
+
+  entry.vendor = vendor
 
   return entry
 }
@@ -38,12 +41,12 @@ function configurePlugins(pages, action) {
     return new HtmlWebpackPlugin({
       template: `${page}.html`,
       filename: `${page}.html`,
-      chunks: ['common', page]
+      chunks: ['vendor', page]
     })
   })
 
-  if (pages.length > 1 && action !== actions.TEST) {
-    plugins.push(new optimize.CommonsChunkPlugin({ name: 'common' }))
+  if (action !== actions.TEST) {
+    plugins.push(new optimize.CommonsChunkPlugin({ name: 'vendor' }))
   }
 
   return plugins
