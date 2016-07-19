@@ -21,6 +21,7 @@ import pipeline from './util/pipeline'
  * @param {string[]} [options.javaScript.buildDependencies = true] Which dependencies to transpile (Ex: ['ui-react-components'])
  * @param {boolean} [options.hotReloading = true] Enable hot reloading
  * @param {boolean} [options.optimize = false] Optimize the output (minify, dedup...)
+ * @param {boolean} [options.offline = true] Adds offline support using service workers
  * @param {boolean} [options.defineNodeEnv = true] Define and replace NODE_ENV environment in the code
  * @param {boolean} [options.clean = true] Clean the build directory
  * @param {boolean} [options.coverage = false] Outputs test coverage while running the tests
