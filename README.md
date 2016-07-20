@@ -8,7 +8,8 @@
   <!-- Build Status -->
   <a href="https://gitlab.com/seanclayton/neato/commits/master"><img alt="build status" src="https://gitlab.com/seanclayton/neato/badges/master/build.svg" /></a>
   <!-- NPM Info -->
-  <a href="https://www.npmjs.com/package/neato"><img alt="npm info" src="https://img.shields.io/npm/v/neato.svg?maxAge=2592000?style=flat-square" /></a>
+  <a href="https://www.npmjs.com/package/neato"><img alt="npm version" src="https://img.shields.io/npm/v/neato.svg?maxAge=2592000?style=flat-square" /></a>
+  <a href="https://www.npmjs.com/package/neato"><img alt="npm downloads/month" src="https://img.shields.io/npm/dm/neato.svg?maxAge=2592000?style=flat-square" /></a>
   <!-- Donations -->
   <a href="https://cash.me/$seanc">
     <img src="https://img.shields.io/badge/square-donate-green.svg" alt="Donate with Square Cash" />
