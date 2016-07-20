@@ -25,7 +25,7 @@ Neato is a module you install at your project's start. It adds a bunch of the wi
 
 You can see [all issues with the `planned-feature` label here].
 
-[all issues with the `planned-feature` label here]: https://gitlab.com/seanclayton/neato/issues?label_name%5B%5D=planned-feature
+[all issues with the `planned-feature` label here]: https://gitlab.com/seanclayton/neato/issues?label_name%5B%5D=Planned+Feature
 
 ### Installation
 
