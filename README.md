@@ -1,19 +1,17 @@
 <div align="center">
-  <img style="max-width:768px;" src="https://gitlab.com/seanclayton/neato/raw/master/logo.png" />
+  <img style="max-width:512px;" title="Neato logo" src="https://gitlab.com/seanclayton/neato/raw/master/logo.png" />
   <br />
   <!-- Dependency Status -->
-  <a href="https://david-dm.org/sean-clayton/neato" title="Dependency status"><img src="https://david-dm.org/sean-clayton/neato.svg"/></a>
+  <a href="https://david-dm.org/sean-clayton/neato" title="dependency health"><img src="https://david-dm.org/sean-clayton/neato.svg"/></a>
   <!-- devDependency Status -->
-  <a href="https://david-dm.org/sean-clayton/neato#info=devDependencies" title="devDependency status"><img src="https://david-dm.org/sean-clayton/neato/dev-status.svg"/></a>
+  <a href="https://david-dm.org/sean-clayton/neato#info=devDependencies" title="devDependency health"><img src="https://david-dm.org/sean-clayton/neato/dev-status.svg"/></a>
   <!-- Build Status -->
-  <a href="https://gitlab.com/seanclayton/neato/commits/master"><img alt="build status" src="https://gitlab.com/seanclayton/neato/badges/master/build.svg" /></a>
+  <a href="https://gitlab.com/seanclayton/neato/pipelines"><img alt="build status" src="https://gitlab.com/seanclayton/neato/badges/master/build.svg" /></a>
   <!-- NPM Info -->
   <a href="https://www.npmjs.com/package/neato"><img alt="npm version" src="https://img.shields.io/npm/v/neato.svg?maxAge=2592000?style=flat-square" /></a>
   <a href="https://www.npmjs.com/package/neato"><img alt="npm downloads/month" src="https://img.shields.io/npm/dm/neato.svg?maxAge=2592000?style=flat-square" /></a>
   <!-- Donations -->
-  <a href="https://cash.me/$seanc">
-    <img src="https://img.shields.io/badge/square-donate-green.svg" alt="Donate with Square Cash" />
-  </a>
+  <a href="https://beerpay.io/sean-clayton/neato"><img src="https://beerpay.io/sean-clayton/neato/badge.svg" /></a>
 </div>
 
 # Neato
