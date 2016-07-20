@@ -7,8 +7,14 @@ import Server from 'webpack-dev-server'
  */
 export default (neatoOptions) => new Promise((resolve, reject) => {
   const options = {
+    inline: true,
     hot: true,
-    historyApiFallback: neatoOptions.pages && neatoOptions.pages[0] && `${neatoOptions.pages[0]}.html`
+    historyApiFallback: neatoOptions.pages && neatoOptions.pages[0] && `${neatoOptions.pages[0]}.html`,
+    stats: {
+      colors: true,
+      chunks: false,
+      noInfo: true
+    }
   }
 
   try {
@@ -31,19 +37,19 @@ export default (neatoOptions) => new Promise((resolve, reject) => {
  * HMR bundle setup based on code from
  * https://github.com/webpack/webpack-dev-server/blob/master/bin/webpack-dev-server.js
  */
-function setupHMR(saguiOptions) {
+function setupHMR(neatoOptions) {
   return {
-    ...saguiOptions,
-    webpack: saguiOptions.webpack.map((webpack) => ({
+    ...neatoOptions,
+    webpack: neatoOptions.webpack.map((webpack) => ({
       ...webpack,
-      entry: concatHMRBundle(saguiOptions, webpack.entry)
+      entry: concatHMRBundle(neatoOptions, webpack.entry)
     }))
   }
 }
 
-function concatHMRBundle(saguiOptions, entry) {
+function concatHMRBundle(neatoOptions, entry) {
   const devClient = [
-    require.resolve('webpack-dev-server/client/') + '?http://0.0.0.0:' + saguiOptions.port,
+    `${require.resolve('webpack-dev-server/client/')}?http://0.0.0.0:${neatoOptions.port}`,
     'webpack/hot/dev-server'
   ]
 
