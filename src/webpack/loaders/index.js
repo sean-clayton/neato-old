@@ -23,6 +23,6 @@ export default (neatoOptions) => {
 
   return loaders.filter((loader) => disabledLoaders.indexOf(loader.name) === -1)
     .reduce((webpackConfig, loader) => (
-      merge.smart(webpackConfig, loader.configure(neatoOptions))
+      merge(webpackConfig, loader.configure(neatoOptions))
     ), {})
 }
