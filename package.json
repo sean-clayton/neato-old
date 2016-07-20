@@ -67,7 +67,6 @@
     "html-webpack-plugin": "^2.7.2",
     "json-loader": "^0.5.4",
     "lodash.uniq": "^4.3.0",
-    "node-sass": "^3.3.3",
     "offline-plugin": "^3.4.2",
     "parent-module": "^0.1.0",
     "postcss-easy-import": "^1.0.1",
