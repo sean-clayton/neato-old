@@ -10,6 +10,6 @@ const archetypes = [
 
 export default (neatoOptions) => (
   archetypes.reduce((webpackConfig, archetype) => (
-    merge(webpackConfig, archetype.configure(neatoOptions))
+    merge.smart(webpackConfig, archetype.configure(neatoOptions))
   ), {})
 )

@@ -9,7 +9,7 @@ export default (neatoOptions = {}) => {
   return {
     ...neatoOptions,
     webpack: splitArchetypes(neatoOptions).map(
-      (neatoOptionsByArchetype) => merge(
+      (neatoOptionsByArchetype) => merge.smart(
         archetypes(neatoOptionsByArchetype),
         presets(neatoOptionsByArchetype),
         loaders(neatoOptionsByArchetype),
