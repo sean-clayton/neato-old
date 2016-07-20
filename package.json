@@ -81,7 +81,7 @@
     "url-loader": "^0.5.6",
     "webpack": "^1.9.6",
     "webpack-dev-server": "^1.14.1",
-    "webpack-merge": "^0.14.0"
+    "webpack-merge": "^0.8.4"
   },
   "peerDependencies": {
     "babel-plugin-react-transform": "^2.0.2",
