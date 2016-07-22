@@ -1,3 +1,3 @@
 const app = document.getElementById('app')
 
-app.innerText = "Hello world!"
+app.innerText = 'Hello world!'
