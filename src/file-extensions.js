@@ -1,12 +1,14 @@
 export default {
   list: {
-    JAVASCRIPT: ['.js', '.jsx', '.es6']
+    JAVASCRIPT: ['.js', '.jsx', '.es6'],
+    TYPESCRIPT: ['.ts', '.tsx']
   },
   test: {
     CSS: /\.css$/,
     EOT: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
     IMAGE: /\.(png|jpg|jpeg|gif|svg)$/,
     JAVASCRIPT: /\.(jsx?|es6)$/,
+    TYPESCRIPT: /\.tsx?$/,
     JSON: /\.(json)$/,
     SCSS: /\.scss$/,
     TTF: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
