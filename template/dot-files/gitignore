@@ -6,3 +6,4 @@ dist
 *.log
 *.log.*
 .nyc_output
+.awcache

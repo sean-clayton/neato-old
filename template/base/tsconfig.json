@@ -1,9 +1,22 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "sourceMap": true
+    "target": "es2015",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "compileOnSave": false,
+    "buildOnSave": false,
+    "strictNullChecks": false,
+    "pretty": true,
+    "noEmitHelpers": true
   },
-  "exclude": [
-    "node_modules"
-  ]
+  "files": [
+    "src"
+  ],
+  "awesomeTypescriptLoaderOptions": {
+    "compiler": "typescript",
+    "forkChecker": true
+  }
 }
