@@ -14,7 +14,8 @@ export default (neatoOptions) => new Promise((resolve, reject) => {
       colors: true,
       chunks: false,
       noInfo: true
-    }
+    },
+    ...neatoOptions.devServerOptions
   }
 
   try {
