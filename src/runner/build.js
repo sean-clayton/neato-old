@@ -1,5 +1,5 @@
 import webpack from 'webpack'
-import { logError, log } from '../util/log'
+import { logError, log, logInfo } from '../util/log'
 
 export default (neatoOptions) => new Promise((resolve, reject) => {
   const compiler = webpack(neatoOptions.webpack)
@@ -25,7 +25,11 @@ export default (neatoOptions) => new Promise((resolve, reject) => {
       reject()
     }
     else {
-      log('Built successfull.')
+      log('Built successfully.')
+      logInfo(stats.toString({
+        colors: true,
+        chunks: false
+      }))
       resolve()
     }
   })
