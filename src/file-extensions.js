@@ -5,6 +5,7 @@ export default {
   },
   test: {
     CSS: /\.css$/,
+    GLOBAL_CSS: /\.global\.css$/,
     EOT: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
     IMAGE: /\.(png|jpg|jpeg|gif|svg)$/,
     JAVASCRIPT: /\.(jsx?|es6)$/,

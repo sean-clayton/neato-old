@@ -25,8 +25,6 @@ export default {
     const shouldExtract = options.extract && pages.length > 0 && action === actions.BUILD
     const localIdentName = optimize ? '[name]_[local]__[hash]' : '[name]_[path]_[local]__[hash:base64:5]'
 
-    const extractCss = new ExtractTextPlugin('[name]-[chunkhash].css', { allChunks: true })
-
     // toggle source maps and CSS Modules
     const cssModules = options.cssModules ? 'modules' : ''
     const sourceMaps = options.sourceMaps ? 'sourceMap' : ''
@@ -64,21 +62,21 @@ export default {
             test: fileExtensions.test.CSS,
             include: path.resolve(projectPath, './src'),
             exclude: path.resolve(projectPath, './src/styles'),
-            loaders: shouldExtract
-              ? [extractCss.extract(cssLoaders)]
-              : ['style', ...cssLoaders]
+            loader: shouldExtract
+              ? ExtractTextPlugin.extract(cssLoaders)
+              : ['style', ...cssLoaders].join('!')
           },
           {
-            test: fileExtensions.test.CSS,
+            test: fileExtensions.test.GLOBAL_CSS,
             include: path.resolve(projectPath, './src/styles'),
-            loaders: shouldExtract
-              ? [extractCss.extract(globalCssLoaders)]
-              : ['style', ...globalCssLoaders]
+            loader: shouldExtract
+              ? ExtractTextPlugin.extract(globalCssLoaders)
+              : ['style', ...globalCssLoaders].join('!')
           }
         ]
       },
 
-      plugins: shouldExtract ? [extractCss] : []
+      plugins: shouldExtract ? [new ExtractTextPlugin('[name]-[chunkhash].css', { allChunks: true })] : []
     }
   }
 }
