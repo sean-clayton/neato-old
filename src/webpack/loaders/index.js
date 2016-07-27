@@ -7,7 +7,6 @@ import typescript from './typescript'
 import json from './json'
 import style from './style'
 import video from './video'
-import yaml from './yaml'
 
 const loaders = [
   font,
@@ -16,8 +15,7 @@ const loaders = [
   typescript,
   json,
   style,
-  video,
-  yaml
+  video
 ]
 
 export default (neatoOptions) => {

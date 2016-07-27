@@ -1,5 +1,6 @@
+import path from 'path'
 import postCSSModulesValues from 'postcss-modules-values'
-import postCSSEasyImport from 'postcss-easy-import'
+import postCSSImport from 'postcss-import'
 import precss from 'precss'
 import postCSSFlexbugsFixes from 'postcss-flexbugs-fixes'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
@@ -13,12 +14,6 @@ const defaultOptions = {
   extract: true
 }
 
-/**
- * Style preset with
- * - CSS Modules support
- * - Sass language
- * - Autoprefixer
- */
 export default {
   name: 'style',
   configure({ action, optimize, pages = [], projectPath, style = {} }) {
@@ -43,10 +38,21 @@ export default {
       'postcss-loader'
     ]
 
+    const globalCssLoaders = [
+      `css?${sourceMaps}`,
+      'postcss-loader'
+    ]
+
     return {
       postcss: [
+        postCSSImport({
+          root: projectPath,
+          path: [
+            path.resolve(projectPath, './node_modules'),
+            path.resolve(projectPath, './src')
+          ]
+        }),
         precss,
-        postCSSEasyImport,
         postCSSModulesValues,
         autoprefixer({ browsers: ['last 2 versions'] }),
         postCSSFlexbugsFixes
@@ -56,9 +62,18 @@ export default {
         loaders: [
           {
             test: fileExtensions.test.CSS,
-            loader: shouldExtract
-              ? extractCss.extract(cssLoaders)
-              : ['style', ...cssLoaders].join('!')
+            include: path.resolve(projectPath, './src'),
+            exclude: path.resolve(projectPath, './src/styles'),
+            loaders: shouldExtract
+              ? [extractCss.extract(cssLoaders)]
+              : ['style', ...cssLoaders]
+          },
+          {
+            test: fileExtensions.test.CSS,
+            include: path.resolve(projectPath, './src/styles'),
+            loaders: shouldExtract
+              ? [extractCss.extract(globalCssLoaders)]
+              : ['style', ...globalCssLoaders]
           }
         ]
       },
