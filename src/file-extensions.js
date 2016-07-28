@@ -6,14 +6,8 @@ export default {
   test: {
     CSS: /\.css$/,
     GLOBAL_CSS: /\.global\.css$/,
-    EOT: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
     IMAGE: /\.(png|jpg|jpeg|gif|svg)$/,
     JAVASCRIPT: /\.(jsx?|es6)$/,
-    TYPESCRIPT: /\.tsx?$/,
-    JSON: /\.(json)$/,
-    TTF: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-    VIDEO: /\.(ogg|mp4)$/,
-    WOFF2: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-    WOFF: /\.woff(\?v=\d+\.\d+\.\d+)?$/
+    TYPESCRIPT: /\.tsx?$/
   }
 }
