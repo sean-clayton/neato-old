@@ -17,7 +17,7 @@
 </div>
 
 # Neato
-An app performance-enhancing drug that's pretty neat because of the way it is.
+An app workflow-enhancing drug that's pretty neat because of the way it is.
 
 ### About Neato
 
@@ -34,6 +34,7 @@ Neato is a module you install at your project's start. It adds a bunch of the wi
 - React-ready
 - TypeScript support
 - Build step for creating a production-ready build
+- _Much_ more!
 
 ### Planned Features
 
