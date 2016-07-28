@@ -4,7 +4,7 @@ import postCSSImport from 'postcss-import'
 import precss from 'precss'
 import postCSSFlexbugsFixes from 'postcss-flexbugs-fixes'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
-import autoprefixer from 'autoprefixer'
+import cssnano from 'cssnano'
 import fileExtensions from '../../file-extensions'
 import actions from '../../actions'
 
@@ -52,7 +52,18 @@ export default {
         }),
         precss,
         postCSSModulesValues,
-        autoprefixer({ browsers: ['last 2 versions'] }),
+        cssnano({
+          sourcemap: true,
+          autoprefixer: {
+            add: true,
+            remove: true,
+            browsers: ['last 2 versions']
+          },
+          safe: true,
+          discardComments: {
+            removeAll: true
+          }
+        }),
         postCSSFlexbugsFixes
       ],
 
@@ -68,7 +79,10 @@ export default {
           },
           {
             test: fileExtensions.test.GLOBAL_CSS,
-            include: path.resolve(projectPath, './src/styles'),
+            include: [
+              path.resolve(projectPath, './node_modules'),
+              path.resolve(projectPath, './src/styles')
+            ],
             loader: shouldExtract
               ? ExtractTextPlugin.extract(globalCssLoaders)
               : ['style', ...globalCssLoaders].join('!')

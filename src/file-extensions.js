@@ -5,7 +5,7 @@ export default {
   },
   test: {
     CSS: /\.css$/,
-    GLOBAL_CSS: /\.global\.css$/,
+    GLOBAL_CSS: /(\.global\.css|\.css)$/,
     IMAGE: /\.(png|jpg|jpeg|gif|svg)$/,
     JAVASCRIPT: /\.(jsx?|es6)$/,
     TYPESCRIPT: /\.tsx?$/
