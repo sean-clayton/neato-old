@@ -4,8 +4,8 @@ export default {
     TYPESCRIPT: ['.ts', '.tsx']
   },
   test: {
-    CSS: /\.css$/,
-    GLOBAL_CSS: /(\.global\.css|\.css)$/,
+    CSS: /(\.postcss|\.pcss|\.css)$/,
+    GLOBAL_CSS: /(\.global\.postcss|\.global\.pcss|\.global\.css|\.postcss|\.pcss|\.css)$/,
     IMAGE: /\.(png|jpg|jpeg|gif|svg)$/,
     JAVASCRIPT: /\.(jsx?|es6)$/,
     TYPESCRIPT: /\.tsx?$/
