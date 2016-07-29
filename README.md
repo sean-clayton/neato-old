@@ -49,7 +49,7 @@ You can see [all issues with the "Planned Feature" label here].
 - Node >= 6.0
 
 ```sh
-$ npm install --save --no-optional neato
+$ npm install --save-dev --no-optional neato
 ```
 
 ### Known Bugs
