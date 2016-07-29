@@ -22,7 +22,9 @@
     "prepublish": "not-in-install && npm prune && npm run lint && npm run build && git push && git push --tags || in-install",
     "postinstall": "node ./bin/neato.js install"
   },
-  "engine": "node >= 6.0.0",
+  "engine": {
+    "node": ">=6.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://gitlab.com/seanclayton/neato.git"
@@ -79,7 +81,6 @@
     "resolve-url-loader": "^1.4.4",
     "style-loader": "^0.13.1",
     "template-directory": "^2.0.0",
-    "typescript": "^2.0.0",
     "url-loader": "^0.5.6",
     "webpack": "^1.9.6",
     "webpack-dev-server": "^1.14.1",
@@ -101,7 +102,9 @@
     "eslint-plugin-jsx-a11y": "^2.0.1",
     "eslint-plugin-promise": "^2.0.0",
     "eslint-plugin-react": "^5.2.2",
-    "eslint-plugin-standard": "^2.0.0",
+    "eslint-plugin-standard": "^2.0.0"
+  },
+  "optionalDependencies": {
     "typescript": "^2.0.0"
   }
 }
