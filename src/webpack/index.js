@@ -5,6 +5,11 @@ import presets from './presets'
 import loaders from './loaders'
 import splitArchetypes from './split-archetypes'
 
+/** @module neato/webpack */
+
+/** A neato object with all Webpack configurations
+ * @param {object} neatoOptions - All options given to neato
+ */
 export default (neatoOptions = {}) => {
   return {
     ...neatoOptions,

@@ -11,25 +11,23 @@ import pipeline from './util/pipeline'
  * Neato
  *
  * This function takes a single Neato options object,
- * prepare all the required Webpack / Karma configurations
+ * prepare all the required Webpack configurations
  * and execute the requested action.
  *
- * @param {Object} options Neato options object
- * @param {string} options.projectPath Full path of the root directory of the project being built.
- * @param {string} options.buildTarget Target: (development, production, test).
- * @param {string} options.action Action: (develop, test, build)
- * @param {string[]} [options.javaScript.buildDependencies = true] Which dependencies to transpile (Ex: ['ui-react-components'])
- * @param {boolean} [options.hotReloading = true] Enable hot reloading
- * @param {boolean} [options.optimize = false] Optimize the output (minify, dedup...)
- * @param {boolean} [options.offline = true] Adds offline support using service workers
- * @param {boolean} [options.defineNodeEnv = true] Define and replace NODE_ENV environment in the code
- * @param {boolean} [options.clean = true] Clean the build directory
- * @param {boolean} [options.coverage = false] Outputs test coverage while running the tests
- * @param {boolean} [options.lint = true] Perform static analysis of the code through ESLint
- * @param {string[]} [options.pages = []] Define a build output based on a HTML and JS files.
- * @param {string[]} [options.disabledLoaders = []] Disables loaders for specific file types.
- * @param {Object} [options.webpack] Webpack configuration object to extend the internal configuration.
- * @param {Object} [options.karma] Karma configuration object to extend the internal configuration.
+ * @param {Object} options - Neato options object
+ * @param {string} options.projectPath - Full path of the root directory of the project being built.
+ * @param {string} options.buildTarget T- arget: (development, production, test).
+ * @param {string} options.action - Action: (develop, test, build)
+ * @param {string[]} [options.javaScript.buildDependencies = true] - Which dependencies to transpile (Ex: ['ui-react-components'])
+ * @param {boolean} [options.hotReloading = true] - Enable hot reloading
+ * @param {boolean} [options.optimize = false] - Optimize the output (minify, dedup...)
+ * @param {boolean} [options.offline = true] - Adds offline support using service workers
+ * @param {boolean} [options.defineNodeEnv = true] - Define and replace NODE_ENV environment in the code
+ * @param {boolean} [options.clean = true] - Clean the build directory
+ * @param {boolean} [options.lint = true] - Perform static analysis of the code through ESLint
+ * @param {string[]} [options.pages = []] - Define a build output based on a HTML and JS files.
+ * @param {string[]} [options.disabledLoaders = []] - Disables loaders for specific file types.
+ * @param {Object} [options.webpack] - Webpack configuration object to extend the internal configuration.
  */
 const neato = (options = {}) => {
   const neatoOptions = pipeline(
