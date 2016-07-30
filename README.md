@@ -54,7 +54,7 @@ $ npm install --save-dev --no-optional neato
 
 ### Documentation
 
-Read more about Neato [here](/docs/README.md "Neato Documentation").
+Read more about Neato [here](https://www.gitbook.com/read/book/seanclayton/neato).
 
 ### Known Bugs
 
