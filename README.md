@@ -52,6 +52,10 @@ You can see [all issues with the "Planned Feature" label here].
 $ npm install --save-dev --no-optional neato
 ```
 
+### Documentation
+
+Read more about Neato [here](/docs/README.md "Neato Documentation").
+
 ### Known Bugs
 
 [All issues are reported here.](https://gitlab.com/seanclayton/neato/issues)
