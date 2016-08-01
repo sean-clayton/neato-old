@@ -23,6 +23,10 @@ An app workflow-enhancing drug that's pretty neat because of the way it is.
 
 Neato is a module you install at your project's start. It adds a bunch of the wiring up you usually do when making a modern Javascript-based web app, including your build system, development server, etc. It's super configurable, too!
 
+### Documentation
+
+Read more about Neato [here](https://www.gitbook.com/read/book/seanclayton/neato "Neato Documentation").
+
 ### Current Features
 
 - Extremely minimal conventional overhead
@@ -51,10 +55,6 @@ You can see [all issues with the "Planned Feature" label here].
 ```sh
 $ npm install --save-dev --no-optional neato
 ```
-
-### Documentation
-
-Read more about Neato [here](https://www.gitbook.com/read/book/seanclayton/neato).
 
 ### Known Bugs
 
