@@ -34,12 +34,17 @@
 /* How neat is that? */
 ```
 
-- Use Sass-like syntax via [precss]
-- Pass values from file to file via [postcss-modules-values]
-- Put global styles (styles that go to global scope, such as `html` or `body`) in `src/styles`
-- CSS Optimization with [cssnano], which includes [autoprefixer]
-- Automatic flexbox bug fixing with [postcss-flexbugs-fixes]
+* Use Sass-like syntax via [precss]
+* Pass values from file to file via [postcss-modules-values]
+* Put global styles (styles that go to global scope, such as `html` or `body`) in `src/styles`
+* CSS Optimization with [cssnano], which includes [autoprefixer]
+* Automatic flexbox bug fixing with [postcss-flexbugs-fixes]
 
+[precss]: https://github.com/jonathantneal/precss
+[postcss-modules-values]: https://github.com/css-modules/postcss-modules-values
+[cssnano]: http://cssnano.co/
+[autoprefixer]: https://github.com/postcss/autoprefixer
+[postcss-flexbugs-fixes]: https://github.com/luisrudge/postcss-flexbugs-fixes
 ### Images
 
 - Filetypes supported: `.png`, `.jpg`, `.jpeg`, `.gif`, and `.svg`
