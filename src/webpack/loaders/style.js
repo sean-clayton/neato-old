@@ -42,7 +42,7 @@ export default {
     ]
 
     return {
-      postcss: {
+      postcss: webpack => ({
         plugins: [
           postCSSImport({
             root: projectPath,
@@ -50,7 +50,7 @@ export default {
               path.resolve(projectPath, 'src'),
               path.resolve(projectPath, 'node_modules')
             ],
-            resolve: id => id.replace(/^~/, path.resolve(projectPath, 'src'))
+            addDependencyTo: webpack
           }),
           postCSSModulesValues,
           precss,
@@ -68,7 +68,7 @@ export default {
           }),
           postCSSFlexbugsFixes
         ]
-      },
+      }),
 
       module: {
         loaders: [
