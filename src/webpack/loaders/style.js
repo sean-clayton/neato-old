@@ -46,12 +46,13 @@ export default {
         postCSSImport({
           root: projectPath,
           path: [
-            path.resolve(projectPath, './node_modules'),
-            path.resolve(projectPath, './src')
+            path.resolve(projectPath, 'src/styles'),
+            path.resolve(projectPath, 'src'),
+            path.resolve(projectPath, 'node_modules')
           ]
         }),
-        precss,
         postCSSModulesValues,
+        precss,
         cssnano({
           sourcemap: true,
           autoprefixer: {
