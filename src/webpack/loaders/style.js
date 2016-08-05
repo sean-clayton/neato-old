@@ -42,31 +42,33 @@ export default {
     ]
 
     return {
-      postcss: [
-        postCSSImport({
-          root: projectPath,
-          path: [
-            path.resolve(projectPath, 'src/styles'),
-            path.resolve(projectPath, 'src'),
-            path.resolve(projectPath, 'node_modules')
-          ]
-        }),
-        postCSSModulesValues,
-        precss,
-        cssnano({
-          sourcemap: true,
-          autoprefixer: {
-            add: true,
-            remove: true,
-            browsers: ['last 2 versions']
-          },
-          safe: true,
-          discardComments: {
-            removeAll: true
-          }
-        }),
-        postCSSFlexbugsFixes
-      ],
+      postcss: {
+        plugins: [
+          postCSSImport({
+            root: projectPath,
+            path: [
+              path.resolve(projectPath, 'src'),
+              path.resolve(projectPath, 'node_modules')
+            ],
+            resolve: id => id.replace(/^~/, path.resolve(projectPath, 'src'))
+          }),
+          postCSSModulesValues,
+          precss,
+          cssnano({
+            sourcemap: true,
+            autoprefixer: {
+              add: true,
+              remove: true,
+              browsers: ['last 2 versions']
+            },
+            safe: true,
+            discardComments: {
+              removeAll: true
+            }
+          }),
+          postCSSFlexbugsFixes
+        ]
+      },
 
       module: {
         loaders: [
