@@ -8,6 +8,7 @@ export default {
     GLOBAL_CSS: /(\.global\.postcss|\.global\.pcss|\.global\.css|\.postcss|\.pcss|\.css)$/,
     IMAGE: /\.(png|jpg|jpeg|gif|svg)$/,
     JAVASCRIPT: /\.(jsx?|es6)$/,
+    JSON: /\.json$/,
     TYPESCRIPT: /\.tsx?$/
   }
 }
