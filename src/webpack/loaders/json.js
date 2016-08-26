@@ -1,4 +1,3 @@
-import path from 'path'
 import fileExtensions from '../../file-extensions'
 
 export default {
