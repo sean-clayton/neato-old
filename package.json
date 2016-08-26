@@ -1,6 +1,6 @@
 {
   "name": "neato",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "An app workflow-enhancing drug that's pretty neat because of the way it is.",
   "preferGlobal": false,
   "bin": {
