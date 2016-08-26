@@ -9,9 +9,6 @@ export default {
         loaders: [
           {
             test: fileExtensions.test.JSON,
-            include: [
-              path.resolve(projectPath, 'src')
-            ],
             loader: 'json-loader'
           }
         ]
