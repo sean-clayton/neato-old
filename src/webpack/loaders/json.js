@@ -12,7 +12,7 @@ export default {
             include: [
               path.resolve(projectPath, 'src')
             ],
-            loader: 'json'
+            loader: 'json-loader'
           }
         ]
       }
