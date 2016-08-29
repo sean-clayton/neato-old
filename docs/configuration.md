@@ -28,6 +28,12 @@ Enables/disables service worker that makes your app work without an internet con
 - Default: `true`
 - Example: `offline: true`
 
+#### devServerOptions
+A valid Webpack Dev Server configuration object
+- Type: `object`
+- Default: `undefined`
+- Example: `devServerOptions: {}`
+
 #### disabledLoaders
 Disables loaders from the default Webpack configuration.
 Works great if you're overriding a loader, eg replacing the default
