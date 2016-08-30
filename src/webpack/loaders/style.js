@@ -93,7 +93,10 @@ export default {
         ]
       },
 
-      plugins: shouldExtract ? [new ExtractTextPlugin('[name]-[chunkhash].css', { allChunks: true })] : []
+      plugins: shouldExtract ? [new ExtractTextPlugin({
+        filename: '[name]-[chunkhash].css',
+        allChunks: true
+      })] : []
     }
   }
 }

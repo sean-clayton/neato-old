@@ -1,6 +1,6 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import { join } from 'path'
-import { optimize } from 'webpack'
+import webpack, { optimize } from 'webpack'
 import actions from '../../actions'
 
 export default {
@@ -46,7 +46,7 @@ function configurePlugins(pages, action) {
   })
 
   if (action !== actions.TEST) {
-    plugins.push(new optimize.CommonsChunkPlugin({ name: 'vendor' }))
+    plugins.push(new optimize.CommonsChunkPlugin({ name: 'vendor' }), new webpack.LoaderOptionsPlugin({ minimize: true, debug: false }))
   }
 
   return plugins

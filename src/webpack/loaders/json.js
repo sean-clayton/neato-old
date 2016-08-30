@@ -8,7 +8,7 @@ export default {
         loaders: [
           {
             test: fileExtensions.test.JSON,
-            loader: 'json-loader'
+            loader: 'json'
           }
         ]
       }

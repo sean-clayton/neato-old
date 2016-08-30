@@ -12,7 +12,11 @@ export default {
             include: [
               path.resolve(projectPath, 'src')
             ],
-            loader: 'url-loader?limit=8192&name=[name]-[chunkhash].[ext]'
+            loader: 'url',
+            query: {
+              limit: 8192,
+              name: '[name] - [chunkhash].[ext]'
+            }
           }
         ]
       }
