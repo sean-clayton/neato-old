@@ -79,6 +79,26 @@ module.exports = {
 }
 ```
 
+#### style
+- Type: `object`
+- Default: `undefined`
+- Example: `style: {}`
+
+##### style.postcssPlugins
+- Type: `array`
+- Default: `undefined`
+- Example:
+
+```js
+const sweetPostcssPlugin = require('yo-wuddup')
+const customPostcssStuff = [sweetPostcssPlugin]
+
+module.exports = {
+  // ...
+  postcssPlugins: customPostcssStuff
+}
+```
+
 ### Default Loaders
 - `javascript`
 - `typescript`

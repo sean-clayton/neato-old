@@ -67,7 +67,8 @@ export default {
             }
           }),
           postCSSFlexbugsFixes
-        ]
+        ],
+        ...style.postcssPlugins
       }),
 
       module: {
