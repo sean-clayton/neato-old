@@ -1,82 +1,91 @@
-# 1.2.2
+# Neato Changelog
 
-## Documentation
+### 1.2.3
+
+### Documentation
+- Pretty up changelog
+
+- - -
+
+### 1.2.2
+
+#### Documentation
 - Add changelog!
 
 - - -
 
-# 1.2.1
+### 1.2.1
 
-## Fixes
+#### Fixes
 - Lint warnings were not showing on `neato lint`. Now they are!
 
 - - -
 
-# 1.2.0
+### 1.2.0
 
-## Features
+#### Features
 - You can now bring your own PostCSS plugins! [Read about it here!]
 
 [Read about it here!]: https://seanclayton.gitbooks.io/neato/content/docs/configuration.html#stylepostcssplugins
 
 - - -
 
-# 1.1.4
+### 1.1.4
 
-## Documentation
+#### Documentation
 - Add documentation for dev server options
 
 - - -
 
-# 1.1.3
+### 1.1.3
 
-## Fixes
+#### Fixes
 - Remove unnecessary path package import in loader file
 
 - - -
 
-# 1.1.2
+### 1.1.2
 
-## Fixes
+#### Fixes
 - Fix JSON loader only including from `src`
 
 - - -
 
-# 1.1.1
+### 1.1.1
 
-## Fixes
+#### Fixes
 - Update loader name convention for Webpack
 
 - - -
 
-# 1.1.0
+### 1.1.0
 
-## Features
+#### Features
 - Add ability to import JSON
 
 - - -
 
-# 1.0.3
+### 1.0.3
 
-## Fixes
+#### Fixes
 - Minor patch to the PostCSS import plugin
 
 - - -
 
-# 1.0.2
+### 1.0.2
 
-## Fixes
+#### Fixes
 - Minor fix for webpack plugin syntax
 
 - - -
 
-# 1.0.1
+### 1.0.1
 
-## Fixes
+#### Fixes
 - You can properly resolve to `src/styles` now
 
 - - -
 
-# 1.0.0
+### 1.0.0
 
 - Initial release!
