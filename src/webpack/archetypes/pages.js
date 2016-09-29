@@ -13,6 +13,7 @@ export default {
 
     return {
       output: {
+        publicPath: '/',
         path: join(projectPath, 'dist'),
         filename: optimize ? '[name]-[chunkhash].js' : '[name]-[hash].js',
         chunkFilename: optimize ? '[name]-[chunkhash].chunk.js' : '[name]-[hash].chunk.js'
@@ -39,7 +40,6 @@ function configureEntry(pages, vendor) {
 function configurePlugins(pages, action) {
   const plugins = pages.map((page) => {
     return new HtmlWebpackPlugin({
-      publicPath: '/',
       template: `${page}.html`,
       filename: `${page}.html`,
       chunks: ['vendor', page]
