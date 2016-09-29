@@ -39,6 +39,7 @@ function configureEntry(pages, vendor) {
 function configurePlugins(pages, action) {
   const plugins = pages.map((page) => {
     return new HtmlWebpackPlugin({
+      publicPath: '/',
       template: `${page}.html`,
       filename: `${page}.html`,
       chunks: ['vendor', page]
