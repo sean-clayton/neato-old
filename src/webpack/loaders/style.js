@@ -23,7 +23,7 @@ export default {
     }
 
     const shouldExtract = options.extract && pages.length > 0 && action === actions.BUILD
-    const localIdentName = optimize ? '[local]__[hash:base64:5]' : '[name]_[path]_[local]__[hash:base64:5]'
+    const localIdentName = optimize ? '[name]_[local]__[hash]' : '[name]_[path]_[local]__[hash:base64:5]'
 
     // toggle source maps and CSS Modules
     const cssModules = options.cssModules ? 'modules' : ''
@@ -75,7 +75,6 @@ export default {
         loaders: [
           {
             test: fileExtensions.test.CSS,
-            useOriginalClassAsDataAttribute: optimize,
             include: path.resolve(projectPath, './src'),
             exclude: path.resolve(projectPath, './src/styles'),
             loader: shouldExtract
