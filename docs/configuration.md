@@ -44,6 +44,25 @@ See **Default Loaders** below for a list of valid loaders.
 - Default: `undefined`
 - Example: `disabledLoaders: ['typescript', 'style']`
 
+#### filename
+Changes the filename pattern of the build files.
+Uses the webpack filename syntax.
+- Type: `object`
+- Default: `undefined`
+- Example: `filename: {}`
+
+##### filename.dev
+Changes the filename of the dev build outputs
+- Type: `string`
+- Default: `'[name]-[chunkhash].js'`
+- Example: `'[name].js`
+
+##### filename.prod
+Changes the filename of the prod (optimized) build outputs
+- Type: `string`
+- Default: `'[name]-[hash].js'`
+- Example: `'[name].js'`
+
 #### javaScript
 JavaScript configuration
 - Type: `object`

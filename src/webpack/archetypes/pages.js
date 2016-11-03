@@ -5,7 +5,7 @@ import actions from '../../actions'
 
 export default {
   name: 'pages',
-  configure({ pages = [], action, projectPath, optimize, vendor = [] }) {
+  configure({ pages = [], action, projectPath, optimize, vendor = [], filename }) {
     if (pages.length === 0) { return {} }
 
     const entry = configureEntry(pages, vendor)
@@ -15,7 +15,7 @@ export default {
       output: {
         publicPath: '/',
         path: join(projectPath, 'dist'),
-        filename: optimize ? '[name]-[chunkhash].js' : '[name]-[hash].js',
+        filename: optimize ? filename.dev || '[name]-[chunkhash].js' : filename.prod || '[name]-[hash].js',
         chunkFilename: optimize ? '[name]-[chunkhash].chunk.js' : '[name]-[hash].chunk.js'
       },
       plugins,
