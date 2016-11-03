@@ -63,6 +63,12 @@ Changes the filename of the prod (optimized) build outputs
 - Default: `'[name]-[hash].js'`
 - Example: `'[name].js'`
 
+##### filename.css
+Changes the filename of the CSS build outputs
+- Type: `string`
+- Default: `'[name]-[chunkhash].css'`
+- Example: `'[name].css'`
+
 #### javaScript
 JavaScript configuration
 - Type: `object`

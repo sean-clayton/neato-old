@@ -16,7 +16,7 @@ const defaultOptions = {
 
 export default {
   name: 'style',
-  configure({ action, optimize, pages = [], projectPath, style = {} }) {
+  configure({ action, optimize, pages = [], projectPath, style = {}, filename }) {
     const options = {
       ...defaultOptions,
       ...style
@@ -94,7 +94,7 @@ export default {
         ]
       },
 
-      plugins: shouldExtract ? [new ExtractTextPlugin('[name]-[chunkhash].css', { allChunks: true })] : []
+      plugins: shouldExtract ? [new ExtractTextPlugin(filename.css || '[name]-[chunkhash].css', { allChunks: true })] : []
     }
   }
 }
