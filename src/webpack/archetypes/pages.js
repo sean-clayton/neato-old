@@ -5,7 +5,7 @@ import actions from '../../actions'
 
 export default {
   name: 'pages',
-  configure({ pages = [], action, projectPath, optimize, vendor = [], filename }) {
+  configure({ pages = [], action, projectPath, optimize, vendor = [], filename = {} }) {
     if (pages.length === 0) { return {} }
 
     const entry = configureEntry(pages, vendor)
