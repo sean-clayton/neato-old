@@ -24,11 +24,12 @@ export default {
   }
 }
 
+const reservedNames = ['shared', 'vendor', 'webpack']
+
 function configureEntry(pages, vendor) {
   let entry = {}
 
   pages.forEach((page) => {
-    const reservedNames = ['shared', 'vendor', 'webpack']
     if (reservedNames.some(name => page === name)) throw new Error(`Reserved name "${page}"`)
     entry[page] = [`./${page}`]
   })
@@ -43,7 +44,7 @@ function configurePlugins(pages, action) {
     return new HtmlWebpackPlugin({
       template: `${page}.html`,
       filename: `${page}.html`,
-      chunks: [page]
+      chunks: [...reservedNames, page]
     })
   })
 
