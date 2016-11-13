@@ -43,13 +43,15 @@ function configurePlugins(pages, action) {
   const plugins = pages.map((page) => {
     return new HtmlWebpackPlugin({
       template: `${page}.html`,
-      filename: `${page}.html`,
-      chunks: [...reservedNames, page]
+      hash: true,
+      filename: `${page}.html`
     })
   })
 
   if (action !== actions.TEST) {
-    plugins.push(new optimize.CommonsChunkPlugin(['shared', 'vendor', 'webpack']))
+    plugins.push(new optimize.CommonsChunkPlugin({
+      name: ['shared', 'vendor', 'webpack']
+    }))
   }
 
   return plugins
