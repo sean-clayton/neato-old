@@ -28,7 +28,8 @@ function configureEntry(pages, vendor) {
   let entry = {}
 
   pages.forEach((page) => {
-    if (page === 'vendor') throw new Error('Reserved name "vendor"')
+    const reservedNames = ['shared', 'vendor', 'webpack']
+    if (reservedNames.some(name => page === name)) throw new Error(`Reserved name "${page}"`)
     entry[page] = [`./${page}`]
   })
 
@@ -42,12 +43,12 @@ function configurePlugins(pages, action) {
     return new HtmlWebpackPlugin({
       template: `${page}.html`,
       filename: `${page}.html`,
-      chunks: ['vendor', page]
+      chunks: [page]
     })
   })
 
   if (action !== actions.TEST) {
-    plugins.push(new optimize.CommonsChunkPlugin({ name: 'vendor' }))
+    plugins.push(new optimize.CommonsChunkPlugin(['shared', 'vendor', 'webpack']))
   }
 
   return plugins
