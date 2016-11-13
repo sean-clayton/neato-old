@@ -5,7 +5,7 @@ import actions from '../../actions'
 
 export default {
   name: 'pages',
-  configure({ pages = [], action, projectPath, optimize, vendor = [], filename = {} }) {
+  configure({ pages = [], action, projectPath, optimize, vendor = [], filename = {}, publicPath = '/' }) {
     if (pages.length === 0) { return {} }
 
     const entry = configureEntry(pages, vendor)
@@ -13,7 +13,7 @@ export default {
 
     return {
       output: {
-        publicPath: '/',
+        publicPath,
         path: join(projectPath, 'dist'),
         filename: optimize ? filename.dev || '[name]-[chunkhash].js' : filename.prod || '[name]-[hash].js',
         chunkFilename: optimize ? '[name]-[chunkhash].chunk.js' : '[name]-[hash].chunk.js'
@@ -24,13 +24,13 @@ export default {
   }
 }
 
-const reservedNames = ['shared', 'vendor', 'webpack']
+const chunks = ['shared', 'vendor', 'webpack']
 
 function configureEntry(pages, vendor) {
   let entry = {}
 
   pages.forEach((page) => {
-    if (reservedNames.some(name => page === name)) throw new Error(`Reserved name "${page}"`)
+    if (chunks.some(name => page === name)) throw new Error(`Reserved name "${page}"`)
     entry[page] = [`./${page}`]
   })
 
