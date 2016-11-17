@@ -1,22 +1,21 @@
 import { NoErrorsPlugin } from 'webpack'
 import path from 'path'
-import actions from '../../actions'
 
 export default {
   name: 'base',
-  configure({ action, projectPath, neatoPath }) {
+  configure({ action, projectPath, neatoPath, plugins = [] }) {
     const projectSourcePath = path.join(projectPath, 'src')
 
     // Use a much faster cheap-module-eval-source-map setup when possible
     // see: http://webpack.github.io/docs/configuration.html#devtool
-    const devtool = action === actions.BUILD ? 'source-map' : 'cheap-module-eval-source-map'
+    const devtool = 'source-map'
 
     return {
       context: projectSourcePath,
 
       devtool,
 
-      plugins: [new NoErrorsPlugin()],
+      plugins: [new NoErrorsPlugin(), ...plugins],
 
       resolve: {
         extensions: [''],

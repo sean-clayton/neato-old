@@ -15,7 +15,7 @@ export default {
       output: {
         publicPath,
         path: join(projectPath, 'dist'),
-        filename: optimize ? filename.dev || '[name]-[chunkhash].js' : filename.prod || '[name]-[hash].js',
+        filename: optimize ? filename.prod || '[name]-[chunkhash].js' : filename.dev || '[name]-[hash].js',
         chunkFilename: optimize ? '[name]-[chunkhash].chunk.js' : '[name]-[hash].chunk.js'
       },
       plugins,
