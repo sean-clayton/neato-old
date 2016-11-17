@@ -16,7 +16,7 @@ const defaultOptions = {
 
 export default {
   name: 'style',
-  configure({ action, optimize, pages = [], projectPath, style = {}, filename = {} }) {
+  configure({ action, optimize, pages = [], projectPath, style = { postcssPlugins: [] }, filename = {} }) {
     const options = {
       ...defaultOptions,
       ...style
