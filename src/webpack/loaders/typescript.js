@@ -41,7 +41,7 @@ export default {
 
       plugins: [ new ForkCheckerPlugin() ],
       module: {
-        loaders: [
+        rules: [
           {
             test: fileExtensions.test.TYPESCRIPT,
             include: [

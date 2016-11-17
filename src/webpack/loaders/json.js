@@ -5,10 +5,10 @@ export default {
   configure({ projectPath }) {
     return {
       module: {
-        loaders: [
+        rules: [
           {
             test: fileExtensions.test.JSON,
-            loader: 'json-loader'
+            use: 'json-loader'
           }
         ]
       }

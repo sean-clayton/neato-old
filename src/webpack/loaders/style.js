@@ -23,22 +23,33 @@ export default {
     }
 
     const shouldExtract = options.extract && pages.length > 0 && action === actions.BUILD
-    const localIdentName = optimize ? '[name]_[local]__[hash]' : '[name]_[path]_[local]__[hash:base64:5]'
+    const localIdentName = optimize ? '[name]_[local]__[hash:base64:5]' : '[path][name]_[local]__[hash:base64:5]'
 
     // toggle source maps and CSS Modules
-    const cssModules = options.cssModules ? 'modules' : ''
-    const sourceMaps = options.sourceMaps ? 'sourceMap' : ''
+    const cssModules = options.cssModules
+    const sourceMaps = options.sourceMaps
 
     // importLoaders: use the following postcss-loader in @import statements
     // modules: enable css-modules
     const cssLoaders = [
-      `css?${cssModules}&${sourceMaps}&importLoaders=1&localIdentName=${localIdentName}`,
-      'postcss-loader'
+      {
+        loader: 'css-loader',
+        modules: cssModules,
+        sourceMap: sourceMaps,
+        importLoaders: 1,
+        localIdentName
+      },
+      {
+        loader: 'postcss-loader'
+      }
     ]
 
     const globalCssLoaders = [
-      `css?${sourceMaps}`,
-      'postcss-loader'
+      {
+        loader: 'css-loader',
+        sourceMap: sourceMaps
+      },
+      { loader: 'postcss-loader' }
     ]
 
     return {
@@ -72,12 +83,12 @@ export default {
       }),
 
       module: {
-        loaders: [
+        rules: [
           {
             test: fileExtensions.test.CSS,
             include: path.resolve(projectPath, './src'),
             exclude: path.resolve(projectPath, './src/styles'),
-            loader: shouldExtract
+            use: shouldExtract
               ? ExtractTextPlugin.extract(cssLoaders)
               : ['style', ...cssLoaders].join('!')
           },
@@ -87,14 +98,17 @@ export default {
               path.resolve(projectPath, './node_modules'),
               path.resolve(projectPath, './src/styles')
             ],
-            loader: shouldExtract
+            use: shouldExtract
               ? ExtractTextPlugin.extract(globalCssLoaders)
               : ['style', ...globalCssLoaders].join('!')
           }
         ]
       },
 
-      plugins: shouldExtract ? [new ExtractTextPlugin(filename.css || '[name]-[chunkhash].css', { allChunks: true })] : []
+      plugins: shouldExtract ? [new ExtractTextPlugin({
+        filename: filename.css || '[name]-[chunkhash].css',
+        allChunks: true
+      })] : []
     }
   }
 }

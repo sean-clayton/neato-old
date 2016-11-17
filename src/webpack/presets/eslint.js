@@ -24,10 +24,11 @@ export default {
       },
 
       module: {
-        preLoaders: [
+        rules: [
           {
             test: fileExtensions.test.JAVASCRIPT,
-            loader: 'eslint',
+            enforce: 'pre',
+            use: 'eslint',
             exclude: /node_modules/
           }
         ]

@@ -38,14 +38,14 @@ export default {
       },
 
       module: {
-        loaders: [
+        rules: [
           {
             test: fileExtensions.test.JAVASCRIPT,
             include: [
               path.join(projectPath, 'src'),
               ...userPaths
             ],
-            loader: 'babel'
+            use: 'babel-loader'
           }
         ]
       }

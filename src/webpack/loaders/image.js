@@ -6,13 +6,19 @@ export default {
   configure({ projectPath }) {
     return {
       module: {
-        loaders: [
+        rules: [
           {
             test: fileExtensions.test.IMAGE,
             include: [
               path.resolve(projectPath, 'src')
             ],
-            loader: 'url-loader?limit=8192&name=[name]-[chunkhash].[ext]'
+            use: {
+              loader: 'url-loader',
+              options: {
+                limit: 8192,
+                name: '[name]-[chunkhash].[ext]'
+              }
+            }
           }
         ]
       }
