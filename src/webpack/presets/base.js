@@ -18,12 +18,9 @@ export default {
       plugins: [new NoErrorsPlugin(), ...plugins],
 
       resolve: {
-        extensions: [''],
-
-        root: [
-          path.join(projectPath, '/node_modules'),
+        modules: [
           projectSourcePath,
-
+          path.join(projectPath, '/node_modules'),
           // Neato node_modules is required in the path to be able
           // to load the `webpack-hot-middleware`
           path.join(neatoPath, '/node_modules')
