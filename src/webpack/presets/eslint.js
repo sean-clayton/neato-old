@@ -28,7 +28,7 @@ export default {
           {
             test: fileExtensions.test.JAVASCRIPT,
             enforce: 'pre',
-            use: 'eslint',
+            use: 'eslint-loader',
             exclude: /node_modules/
           }
         ]

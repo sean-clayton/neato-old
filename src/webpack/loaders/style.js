@@ -90,7 +90,7 @@ export default {
             exclude: path.resolve(projectPath, './src/styles'),
             use: shouldExtract
               ? ExtractTextPlugin.extract(cssLoaders)
-              : ['style', ...cssLoaders].join('!')
+              : ['style-loader', ...cssLoaders].join('!')
           },
           {
             test: fileExtensions.test.GLOBAL_CSS,
@@ -100,7 +100,7 @@ export default {
             ],
             use: shouldExtract
               ? ExtractTextPlugin.extract(globalCssLoaders)
-              : ['style', ...globalCssLoaders].join('!')
+              : ['style-loader', ...globalCssLoaders].join('!')
           }
         ]
       },
